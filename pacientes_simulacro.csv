@@ -1,0 +1,7 @@
+nombre,documento,edad,genero,condicion,observaciones,nivel,tension,pulso,frecuencia_respiratoria,temperatura,oxigeno,estado_atencion,medico
+Mateo Valencia Rivas,SIM-201,58,Hombre,Dolor torácico opresivo,Refiere dolor irradiado a brazo izquierdo y sudoración profusa,1,85/55,115,24,36.2,90,Pendiente,Por asignar
+Valentina Castro Mejia,SIM-202,24,Mujer,Crisis asmática severa,Dificultad respiratoria aguda con sibilancias audibles,2,130/85,108,28,36.9,91,Pendiente,Por asignar
+Hernan Dario Restrepo,SIM-203,41,Hombre,Dolor abdominal fosa ilíaca,Sospecha de apendicitis con dolor constante de 6 horas,3,125/80,84,19,38.1,97,Pendiente,Por asignar
+Camila Sofia Morales,SIM-204,19,Mujer,Trauma en tobillo derecho,Esguince con inflamación tras caída en escaleras,4,115/75,76,16,36.5,99,Pendiente,Por asignar
+Andres Felipe Ochoa,SIM-205,32,Hombre,Cuadro gripal de 3 días,Congestión nasal y dolor de garganta sin dificultad respiratoria,5,118/78,72,16,36.7,98,Pendiente,Por asignar
+

@@ -1,0 +1,4 @@
+﻿nombre,documento,edad,genero,condicion,observaciones,nivel,tension,pulso,frecuencia_respiratoria,temperatura,oxigeno,estado_atencion,medico
+Paciente Demo A,DEMO-101,64,Mujer,Motivo de ejemplo A,Registro ficticio para exposición,4,120/80,82,18,36.8,98,Pendiente,Por asignar
+Paciente Demo B,DEMO-102,38,Hombre,Motivo de ejemplo B,Registro ficticio para exposición,2,118/76,78,17,36.7,99,Atendido,Dr. Ejemplo
+Paciente Demo C,DEMO-103,52,No especificado,Motivo de ejemplo C,Registro ficticio para exposición,1,122/80,88,19,37.0,97,Pendiente,Por asignar

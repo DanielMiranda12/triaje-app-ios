@@ -1,0 +1,529 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+void main() {
+  runApp(const TriajeApp());
+}
+
+class TriajeApp extends StatelessWidget {
+  const TriajeApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'trIAje Móvil',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF3449C7)),
+        useMaterial3: true,
+        scaffoldBackgroundColor: const Color(0xFFF4F6FA),
+      ),
+      home: const ConsultaPacienteScreen(),
+    );
+  }
+}
+
+class ConsultaPacienteScreen extends StatefulWidget {
+  const ConsultaPacienteScreen({super.key});
+
+  @override
+  State<ConsultaPacienteScreen> createState() => _ConsultaPacienteScreenState();
+}
+
+class _ConsultaPacienteScreenState extends State<ConsultaPacienteScreen> {
+  final TextEditingController _documentController = TextEditingController();
+
+  // IP por defecto: '10.0.2.2' sirve para el emulador oficial de Android Studio.
+  // Si pruebas en un celular físico real conectado al mismo Wi-Fi, cámbiala a la IP de tu PC (ej: 192.168.1.15).
+  String serverIp = '10.0.2.2';
+  final int serverPort = 3000;
+
+  bool _isLoading = false;
+  String? _errorMessage;
+  Map<String, dynamic>? _patientData;
+
+  Future<void> _consultarTurno() async {
+    final document = _documentController.text.trim();
+    if (document.isEmpty) {
+      setState(() {
+        _errorMessage = 'Por favor ingresa tu número de documento.';
+      });
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+
+    final url =
+        Uri.parse('http://$serverIp:$serverPort/api/patients/quick-consult');
+
+    try {
+      final response = await http
+          .post(
+            url,
+            headers: {'Content-Type': 'application/json'},
+            body: jsonEncode({'document': document}),
+          )
+          .timeout(const Duration(seconds: 8));
+
+      final data = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        setState(() {
+          _patientData = data;
+          _isLoading = false;
+        });
+      } else {
+        setState(() {
+          _errorMessage = data['error'] ?? 'No se encontró el paciente.';
+          _patientData = null;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _errorMessage =
+            'No se pudo conectar al servidor ($serverIp:$serverPort). Revisa que el servidor Node.js esté iniciado y que ambos dispositivos estén en el mismo Wi-Fi.';
+        _patientData = null;
+        _isLoading = false;
+      });
+    }
+  }
+
+  Color _obtenerColorNivel(int nivel) {
+    switch (nivel) {
+      case 1:
+        return const Color(0xFFDC2626); // Rojo
+      case 2:
+        return const Color(0xFFEA580C); // Naranja
+      case 3:
+        return const Color(0xFFCA8A04); // Amarillo
+      case 4:
+        return const Color(0xFF16A34A); // Verde
+      case 5:
+        return const Color(0xFF2563EB); // Azul
+      default:
+        return const Color(0xFF3449C7);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Row(
+          children: [
+            Container(
+              width: 32,
+              height: 32,
+              decoration: BoxDecoration(
+                color: const Color(0xFF3449C7),
+                borderRadius: BorderRadius.circular(9),
+              ),
+              alignment: Alignment.center,
+              child: const Text('t',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18)),
+            ),
+            const SizedBox(width: 10),
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('trIAje Móvil',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Color(0xFF182334))),
+                Text('Consulta de Turnos',
+                    style: TextStyle(fontSize: 10, color: Colors.black45)),
+              ],
+            ),
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.wifi_find, color: Color(0xFF3449C7)),
+            tooltip: 'Configurar IP del servidor',
+            onPressed: _mostrarConfiguracionIp,
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          children: [
+            Card(
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+                side: const BorderSide(color: Color(0xFFE2E8F0)),
+              ),
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(18),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    const Text('Consulta tu turno de atención',
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF1E293B))),
+                    const SizedBox(height: 5),
+                    const Text(
+                        'Escribe tu cédula o documento de identidad para verificar tu posición actual en la fila.',
+                        style: TextStyle(fontSize: 11, color: Colors.black54)),
+                    const SizedBox(height: 16),
+                    TextField(
+                      controller: _documentController,
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        labelText: 'Número de documento / Cédula',
+                        hintText: 'Ej. 1024501001 o DEMO-101',
+                        prefixIcon: const Icon(Icons.badge_outlined,
+                            color: Color(0xFF3449C7)),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                        filled: true,
+                        fillColor: const Color(0xFFF8FAFC),
+                      ),
+                      onSubmitted: (_) => _consultarTurno(),
+                    ),
+                    const SizedBox(height: 14),
+                    ElevatedButton(
+                      onPressed: _isLoading ? null : _consultarTurno,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF3449C7),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 13),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12)),
+                      ),
+                      child: _isLoading
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                  color: Colors.white, strokeWidth: 2))
+                          : const Text('Consultar mi cupo y estado',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (_errorMessage != null) ...[
+              const SizedBox(height: 14),
+              Container(
+                padding: const EdgeInsets.all(13),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFEE2E2),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: const Color(0xFFFCA5A5)),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.error_outline, color: Color(0xFFDC2626)),
+                    const SizedBox(width: 10),
+                    Expanded(
+                        child: Text(_errorMessage!,
+                            style: const TextStyle(
+                                color: Color(0xFF991B1B), fontSize: 12))),
+                  ],
+                ),
+              ),
+            ],
+            if (_patientData != null) ...[
+              const SizedBox(height: 16),
+              _construirTarjetaResultado(_patientData!),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _construirTarjetaResultado(Map<String, dynamic> paciente) {
+    final isPendiente = paciente['careStatus'] == 'Pendiente';
+    final int prioridad =
+        int.tryParse(paciente['priority']?.toString() ?? '5') ?? 5;
+    final colorNivel = _obtenerColorNivel(prioridad);
+
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+        side: const BorderSide(color: Color(0xFFE2E8F0)),
+      ),
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('PACIENTE REGISTRADO',
+                          style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.1)),
+                      Text(paciente['name'] ?? '',
+                          style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF1E293B))),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: colorNivel.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: colorNivel),
+                  ),
+                  child: Text('Nivel $prioridad',
+                      style: TextStyle(
+                          color: colorNivel,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12)),
+                ),
+              ],
+            ),
+            const SizedBox(height: 14),
+
+            // Banner del Cupo
+            Container(
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: isPendiente
+                    ? const Color(0xFFEEF2FF)
+                    : const Color(0xFFECFDF5),
+                borderRadius: BorderRadius.circular(13),
+                border: Border.all(
+                    color: isPendiente
+                        ? const Color(0xFFC7D2FE)
+                        : const Color(0xFFA7F3D0)),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 13, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(9),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.06),
+                            blurRadius: 4)
+                      ],
+                    ),
+                    child: Text(
+                      isPendiente
+                          ? 'Cupo #${paciente['queuePosition'] ?? '—'}'
+                          : '✓ Atendido',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w800,
+                        color: isPendiente
+                            ? const Color(0xFF3449C7)
+                            : const Color(0xFF059669),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          isPendiente
+                              ? 'Turno en espera'
+                              : 'Atención completada',
+                          style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Color(0xFF1E293B)),
+                        ),
+                        Text(
+                          isPendiente
+                              ? (paciente['totalWaiting'] != null
+                                  ? 'Puesto ${paciente['queuePosition']} de ${paciente['totalWaiting']} pacientes'
+                                  : 'En sala de espera')
+                              : 'Médico: ${paciente['doctor'] ?? 'Asignado'}',
+                          style: const TextStyle(
+                              fontSize: 11, color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 16),
+            const Divider(color: Color(0xFFF1F5F9)),
+            const SizedBox(height: 8),
+
+            _filaDato('Documento', paciente['document']?.toString() ?? '—'),
+            _filaDato('Edad y Género',
+                '${paciente['age']} años · ${paciente['gender']}'),
+            _filaDato(
+                'Estado', paciente['careStatus']?.toString() ?? 'Pendiente'),
+            _filaDato('Condición / Motivo',
+                paciente['condition']?.toString() ?? 'Sin especificar'),
+            _filaDato(
+                'Médico', paciente['doctor']?.toString() ?? 'Por asignar'),
+            const SizedBox(height: 8),
+            const Divider(color: Color(0xFFF1F5F9)),
+            const SizedBox(height: 8),
+
+            const Text('Signos vitales registrados:',
+                style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54)),
+            const SizedBox(height: 6),
+            Wrap(
+              spacing: 8,
+              runSpacing: 6,
+              children: [
+                if (paciente['bloodPressure'] != null)
+                  _chipVital('TA', paciente['bloodPressure']),
+                if (paciente['pulse'] != null)
+                  _chipVital('Pulso', '${paciente['pulse']} lpm'),
+                if (paciente['respiratoryRate'] != null)
+                  _chipVital('FR', '${paciente['respiratoryRate']} rpm'),
+                if (paciente['temperature'] != null)
+                  _chipVital('Temp', '${paciente['temperature']} °C'),
+                if (paciente['oxygen'] != null)
+                  _chipVital('O₂', '${paciente['oxygen']}%'),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+            OutlinedButton.icon(
+              onPressed: _isLoading ? null : _consultarTurno,
+              icon: const Icon(Icons.refresh, size: 18),
+              label: const Text('Actualizar mi turno ahora'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: const Color(0xFF3449C7),
+                side: const BorderSide(color: Color(0xFFC7D2FE)),
+                padding: const EdgeInsets.symmetric(vertical: 11),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _chipVital(String label, String valor) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+      decoration: BoxDecoration(
+        color: const Color(0xFFF1F5F9),
+        borderRadius: BorderRadius.circular(7),
+        border: Border.all(color: const Color(0xFFE2E8F0)),
+      ),
+      child: Text('$label: $valor',
+          style: const TextStyle(
+              fontSize: 11,
+              fontWeight: FontWeight.w600,
+              color: Color(0xFF334155))),
+    );
+  }
+
+  Widget _filaDato(String etiqueta, String valor) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3.5),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(etiqueta,
+              style: const TextStyle(fontSize: 12, color: Colors.black54)),
+          Flexible(
+            child: Text(
+              valor,
+              textAlign: TextAlign.end,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF1E293B)),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _mostrarConfiguracionIp() {
+    final controller = TextEditingController(text: serverIp);
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Configurar IP del Servidor',
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '• Si usas el emulador Android de la PC: usa 10.0.2.2\n• Si pruebas en tu celular físico por Wi-Fi: escribe la IP local de tu computador (ej. 192.168.1.15):',
+              style:
+                  TextStyle(fontSize: 12, color: Colors.black87, height: 1.4),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: controller,
+              decoration: const InputDecoration(
+                labelText: 'Dirección IP',
+                border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.router),
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: const Text('Cancelar')),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                serverIp = controller.text.trim();
+              });
+              Navigator.pop(ctx);
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                    content:
+                        Text('Servidor configurado en: $serverIp:$serverPort')),
+              );
+            },
+            child: const Text('Guardar'),
+          ),
+        ],
+      ),
+    );
+  }
+}

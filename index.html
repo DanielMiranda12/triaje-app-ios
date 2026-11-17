@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>trIAje | Registro de pacientes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="hero.css">
+</head>
+<body class="landing-mode">
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="trIAje, inicio">
+      <span class="brand-mark" aria-hidden="true">t</span>
+      <span class="brand-copy"><strong>trIAje</strong><small>Registro de pacientes</small></span>
+    </a>
+    <nav class="public-nav" aria-label="Navegación principal">
+      <a href="#hero-inicio">Inicio</a>
+      <a href="#caracteristicas">Características</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="topbar-right"><div class="demo-indicator"><span class="demo-dot"></span> Prototipo académico <span class="demo-divider">·</span> <span id="db-state">Conectando con la base local…</span></div><div id="session-controls" class="session-controls" hidden><span id="session-label"></span><button id="logout-button" class="button button-quiet" type="button">Cerrar sesión</button></div><a href="#acceso" class="public-login">Iniciar Sesión</a></div>
+  </header>
+
+  <main id="login-screen" class="landing-shell">
+    <section id="hero-inicio" class="hero" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow hero-eyebrow">TRIAJE MÉDICO INTELIGENTE</p>
+        <h1 id="hero-title" class="hero-title">
+          <span>Prioriza. Atiende.</span>
+          <span class="hero-title-accent">Salva Vidas.</span>
+        </h1>
+        <p class="hero-description">trIAje es un sistema de triaje de emergencias rápido, preciso y confiable, diseñado para optimizar la atención médica y priorizar a quienes más lo necesitan.</p>
+
+        <div id="caracteristicas" class="hero-features" aria-label="Características principales">
+          <div class="hero-feature">
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </span>
+            <span>Evaluación inmediata</span>
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m12 3 8 4.5-8 4.5-8-4.5L12 3Z"/><path d="m4 12 8 4.5 8-4.5"/><path d="m4 16.5 8 4.5 8-4.5"/></svg>
+            </span>
+            <span>Clasificación inteligente</span>
+          </div>
+          <div class="hero-feature">
+            <span class="hero-feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.9-8.6a5.5 5.5 0 0 0-.1-7.8Z"/></svg>
+            </span>
+            <span>Mejor atención para todos</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="hero-cta" href="#acceso">
+            Comenzar Ahora
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="hero-access-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.5 7 10 4-1.5 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            Acceso seguro por roles
+          </span>
+        </div>
+      </div>
+
+      <div id="panel-demostracion" class="hero-visual" aria-label="Panel de monitoreo médico de ejemplo">
+        <div class="hero-monitor">
+          <div class="monitor-head">
+            <span class="monitor-live"><i></i> Monitoreo en tiempo real</span>
+            <span class="monitor-time">09:42</span>
+          </div>
+          <div class="monitor-vitals">
+            <div class="vital vital-heart">
+              <span class="vital-label"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.9-8.6a5.5 5.5 0 0 0-.1-7.8Z"/></svg> FC</span>
+              <strong>118 <small>bpm</small></strong>
+            </div>
+            <div class="vital vital-pressure">
+              <span class="vital-label"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-4 4 8 2-4h6"/></svg> PA</span>
+              <strong>90/60 <small>mmHg</small></strong>
+            </div>
+            <div class="vital vital-oxygen">
+              <span class="vital-label"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"/></svg> SpO₂</span>
+              <strong>89 <small>%</small></strong>
+            </div>
+            <div class="vital vital-temp">
+              <span class="vital-label"><svg viewBox="0 0 24 24"><path d="M14 14.8V5a2 2 0 1 0-4 0v9.8a4 4 0 1 0 4 0Z"/></svg> T°</span>
+              <strong>36.2 <small>°C</small></strong>
+            </div>
+          </div>
+          <div class="monitor-chart">
+            <div class="chart-head"><span>Frecuencia cardíaca</span><strong>118 bpm</strong></div>
+            <svg class="chart-svg" viewBox="0 0 320 90" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="heroChartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#33e6ff" stop-opacity=".3"/>
+                  <stop offset="100%" stop-color="#33e6ff" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="chart-grid" d="M0 20h320M0 45h320M0 70h320"/>
+              <path d="M0 68 L12 64 L24 66 L36 52 L48 58 L60 40 L72 47 L84 34 L96 44 L108 28 L120 38 L132 22 L144 34 L156 18 L168 30 L180 24 L192 40 L204 30 L216 44 L228 36 L240 50 L252 42 L264 54 L276 46 L288 58 L300 50 L312 60 L320 54 L320 90 L0 90 Z" fill="url(#heroChartFill)"/>
+              <path class="chart-line" d="M0 68 L12 64 L24 66 L36 52 L48 58 L60 40 L72 47 L84 34 L96 44 L108 28 L120 38 L132 22 L144 34 L156 18 L168 30 L180 24 L192 40 L204 30 L216 44 L228 36 L240 50 L252 42 L264 54 L276 46 L288 58 L300 50 L312 60 L320 54"/>
+              <circle cx="156" cy="18" r="3.5"/>
+            </svg>
+            <svg class="monitor-cross" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg>
+          </div>
+          <div class="monitor-queue">
+            <div class="queue-head"><span>Pacientes en espera</span><strong>3</strong></div>
+            <div class="queue-row q1"><span class="queue-priority">1</span><div><strong>C. Gómez</strong><small>Dolor torácico</small></div><span class="queue-wait">00:02</span></div>
+            <div class="queue-row q2"><span class="queue-priority">2</span><div><strong>V. Castro</strong><small>Crisis asmática</small></div><span class="queue-wait">00:06</span></div>
+            <div class="queue-row q3"><span class="queue-priority">3</span><div><strong>H. Restrepo</strong><small>Dolor abdominal</small></div><span class="queue-wait">00:11</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-fade" aria-hidden="true"></div>
+    </section>
+
+    <section id="beneficios" class="benefits" aria-labelledby="benefits-title">
+      <div class="benefits-inner">
+        <header class="benefits-head">
+          <p class="eyebrow">UN ECOSISTEMA CONECTADO</p>
+          <h2 id="benefits-title">Recepción, triaje y atención hablando el mismo idioma.</h2>
+          <p>Cada registro alimenta la cola de prioridades y el seguimiento del paciente. Nada se vuelve a digitar, nadie pierde el hilo.</p>
+        </header>
+
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16M4 7l3-3M4 7l3 3M20 17H4m16 0-3-3m3 3-3 3"/></svg>
+            </span>
+            <span class="benefit-tag">Flujo único</span>
+            <h3>Un registro, toda la historia</h3>
+            <p>El ingreso se crea una sola vez y queda disponible para recepción, enfermería, medicina y seguimiento.</p>
+            <span class="benefit-metric">Recepción → atención · sin repetir datos</span>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h11M4 18h7"/><circle cx="19" cy="12" r="2"/><circle cx="15" cy="18" r="2"/></svg>
+            </span>
+            <span class="benefit-tag">Prioridad visible</span>
+            <h3>La cola cambia al ritmo del paciente</h3>
+            <p>Cada nivel de triaje reordena la lista y deja claro qué caso debe atenderse primero.</p>
+            <span class="benefit-metric">5 niveles · actualización inmediata</span>
+          </article>
+
+          <article class="benefit-card">
+            <span class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.4 3 8.5 7 10 4-1.5 7-5.6 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <span class="benefit-tag">Contexto compartido</span>
+            <h3>Todos miran el mismo estado</h3>
+            <p>Signos vitales, observaciones y estado de atención conviven en una sola vista adaptada a cada rol.</p>
+            <span class="benefit-metric">3 roles · una sola fuente de verdad</span>
+          </article>
+        </div>
+
+        <ol class="flow" aria-label="Flujo de atención de trIAje">
+          <li>
+            <span class="flow-node">1</span>
+            <span class="flow-copy"><strong>Recepción</strong><small>Identificación y registro</small></span>
+          </li>
+          <li>
+            <span class="flow-node">2</span>
+            <span class="flow-copy"><strong>Triaje</strong><small>Signos vitales y prioridad</small></span>
+          </li>
+          <li>
+            <span class="flow-node">3</span>
+            <span class="flow-copy"><strong>Atención</strong><small>El médico actualiza el estado</small></span>
+          </li>
+          <li>
+            <span class="flow-node">4</span>
+            <span class="flow-copy"><strong>Seguimiento</strong><small>Consulta por documento</small></span>
+          </li>
+        </ol>
+
+        <a class="benefits-cta" href="#acceso">
+          Conectar con mi equipo
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section id="acceso" class="login-shell landing-login" aria-labelledby="access-title">
+      <div class="access-bridge" aria-hidden="true">
+        <span class="access-bridge-line"></span>
+        <span class="access-bridge-node">t</span>
+      </div>
+      <div class="access-content">
+        <header class="access-intro">
+          <p class="eyebrow">ACCESO AL ECOSISTEMA</p>
+          <h2 id="access-title">Tu rol, tu vista, el mismo flujo.</h2>
+          <p>Ingresa con una cuenta de demostración para recorrer la recepción, la cola de triaje y el seguimiento del paciente.</p>
+        </header>
+        <section class="login-card panel">
+        <div class="login-brand"><span class="brand-mark" aria-hidden="true">t</span><div><p class="eyebrow">ACCESO AL SISTEMA</p><h1 id="login-title">Bienvenido a trIAje</h1></div></div>
+        <p class="login-copy">Inicia sesión para entrar a la vista correspondiente a tu rol.</p>
+        <form id="login-form" class="login-form">
+          <label class="field" for="login-user">Usuario<input id="login-user" name="username" autocomplete="username" placeholder="Escribe tu usuario" required></label>
+          <label class="field" for="login-password">Contraseña<input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Escribe tu contraseña" required></label>
+          <p id="login-error" class="login-error" aria-live="polite"></p>
+          <button class="button button-primary login-submit" type="submit">Iniciar sesión</button>
+        </form>
+        <button id="quick-consult-open" class="quick-consult-trigger" type="button">Consulta rápida del paciente</button>
+        <p class="quick-consult-hint">Consulta tu turno y cupo en urgencias solo con tu número de documento.</p>
+        <div class="demo-accounts"><h2>Cuentas para la demostración</h2><p>Selecciona una cuenta para completar los campos:</p>
+          <div class="account-grid">
+            <button type="button" class="account-choice" data-user="admin" data-password="admin123"><strong>Administrador</strong><span>admin / admin123</span></button>
+            <button type="button" class="account-choice" data-user="enfermeria" data-password="enfermeria123"><strong>Jefe de enfermería</strong><span>enfermeria / enfermeria123</span></button>
+            <button type="button" class="account-choice" data-user="medico" data-password="medico123"><strong>Médico</strong><span>medico / medico123</span></button>
+            <button type="button" class="account-choice" data-user="DEMO-101" data-password="paciente123"><strong>Paciente</strong><span>DEMO-101 / paciente123</span></button>
+          </div>
+        </div>
+        <p class="prototype-note"><span class="scope-icon" aria-hidden="true">i</span> Prototipo académico local. Usa solo datos ficticios; no es un sistema clínico.</p>
+        </section>
+      </div>
+    </section>
+
+    <section id="contacto" class="landing-contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div class="contact-copy">
+          <p class="eyebrow">HABLEMOS</p>
+          <h2 id="contact-title">¿Quieres llevar trIAje a tu institución?</h2>
+          <p>Estos son datos de ejemplo listos para reemplazar. Cuando tengas los canales reales de tu equipo, solo cambia estos valores.</p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              </span>
+              <div><small>Correo</small><a href="mailto:contacto@triaje.example">contacto@triaje.example</a></div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M6.6 3.8 9 3l2 4-1.8 1.4a12 12 0 0 0 5.4 5.4L16 12l4 2-.8 2.4c-.4 1.3-1.7 2.2-3.1 2A15.5 15.5 0 0 1 4.6 6.9c-.2-1.4.7-2.7 2-3.1Z"/></svg>
+              </span>
+              <div><small>Teléfono</small><a href="tel:+573000000000">+57 300 000 0000</a></div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0-7.8-4.5L3 21l4.5-1.2A9 9 0 0 0 12 21Z"/><path d="M8.5 8.8c0 3.5 3.2 6.7 6.7 6.7l1.3-1.6-2.2-1.1-1 .9a5.7 5.7 0 0 1-2.9-2.9l.9-1-1.1-2.2-1.7 1.2Z"/></svg>
+              </span>
+              <div><small>WhatsApp</small><a href="https://wa.me/573000000000" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+            </li>
+            <li>
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              </span>
+              <div><small>Dirección</small><a href="https://maps.google.com/?q=Calle+00+%2300-00,+Bogota,+Colombia" target="_blank" rel="noopener">Calle 00 #00-00, Bogotá</a></div>
+            </li>
+            <li class="contact-wide">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              </span>
+              <div><small>Horario de atención</small><span>Lunes a viernes · 7:00 a. m. a 6:00 p. m.</span></div>
+            </li>
+          </ul>
+
+          <p class="contact-note"><span class="scope-icon" aria-hidden="true">i</span> Datos ficticios de demostración. Reemplázalos por los canales reales de tu institución.</p>
+        </div>
+
+        <form id="contact-form" class="contact-form panel" novalidate>
+          <h3>Cuéntanos qué necesitas</h3>
+          <p class="contact-form-copy">Déjanos un correo y prepararemos el mensaje para que lo envíes desde tu cliente de correo.</p>
+          <label class="field" for="contact-name">Nombre
+            <input id="contact-name" name="name" autocomplete="name" placeholder="Tu nombre" required>
+          </label>
+          <label class="field" for="contact-email">Correo electrónico
+            <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+          </label>
+          <label class="field" for="contact-message">Mensaje
+            <textarea id="contact-message" name="message" rows="3" placeholder="Cuéntanos sobre tu institución o tu necesidad" required></textarea>
+          </label>
+          <p id="contact-error" class="login-error" role="alert" aria-live="polite"></p>
+          <button class="button button-primary contact-submit" type="submit">Preparar mensaje</button>
+          <p id="contact-status" class="contact-status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <div class="footer-brand">
+        <a class="brand" href="#hero-inicio" aria-label="trIAje, inicio">
+          <span class="brand-mark" aria-hidden="true">t</span>
+          <span class="brand-copy"><strong>trIAje</strong><small>Triaje médico inteligente</small></span>
+        </a>
+        <p>Prototipo académico local. Usa solo datos ficticios; no es un sistema clínico.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <a href="#hero-inicio">Inicio</a>
+        <a href="#caracteristicas">Características</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#acceso">Acceso al sistema</a>
+      </nav>
+      <p class="footer-meta">© 2026 trIAje · Demostración académica</p>
+    </footer>
+  </main>
+
+  <main id="inicio" class="page-shell" hidden>
+    <div id="role-banner" class="role-banner"><span class="role-avatar" id="role-avatar">A</span><div><strong id="role-title"></strong><span id="role-description"></span></div></div>
+    <section id="admin-users-panel" class="panel admin-users" hidden aria-labelledby="users-title">
+      <div class="panel-heading"><div><p class="eyebrow">DIRECTORIO</p><h2 id="users-title">Usuarios y roles registrados</h2></div><span id="user-total" class="directory-count"></span></div>
+      <div class="directory-layout">
+        <div class="directory-table-wrap"><table class="directory-table"><thead><tr><th>Nombre</th><th>Usuario</th><th>Rol</th><th>Vinculación</th></tr></thead><tbody id="user-rows"></tbody></table></div>
+        <form id="create-user-form" class="create-user-form">
+          <h3>Registrar cuenta</h3>
+          <label class="field">Nombre completo<input name="fullName" required maxlength="120" placeholder="Nombre de la persona"></label>
+          <label class="field">Usuario<input name="username" required maxlength="60" placeholder="Nombre de usuario"></label>
+          <label class="field">Contraseña<input name="password" type="password" minlength="8" required placeholder="Mínimo 8 caracteres"></label>
+          <label class="field">Rol<select name="role" id="new-user-role"><option value="admin">Administrador</option><option value="nurse">Jefe de enfermería</option><option value="doctor">Médico</option><option value="patient">Paciente</option></select></label>
+          <label class="field" id="patient-link-field" hidden>Documento del paciente<input name="patientDocument" maxlength="40" placeholder="Debe coincidir con el registro"></label>
+          <button class="button button-primary" type="submit">Guardar usuario</button>
+          <p id="create-user-message" class="form-message" aria-live="polite"></p>
+        </form>
+      </div>
+      <div id="role-cards" class="role-cards"></div>
+    </section>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">TRIAJE EN URGENCIAS</p>
+        <h1 id="page-title">Registro y consulta de pacientes</h1>
+        <p id="page-description" class="intro-copy">Información organizada para apoyar la consulta durante el proceso de triaje.</p>
+      </div>
+      <div class="scope-note"><span class="scope-icon" aria-hidden="true">i</span><span>La prioridad la asigna el personal de salud.</span></div>
+    </section>
+
+    <section id="workspace" class="workspace" aria-label="Registro y lista de pacientes">
+      <section id="form-panel" class="panel form-panel" aria-labelledby="form-title">
+        <div class="panel-heading">
+          <div><p class="eyebrow">NUEVO INGRESO</p><h2 id="form-title">Datos del paciente</h2></div>
+          <span class="panel-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+          </span>
+        </div>
+
+        <form id="patient-form" novalidate>
+          <input id="record-id" type="hidden">
+          <div class="field-grid two-col">
+            <label class="field field-wide" for="patient-name"><span class="field-label">Nombre del paciente <span class="required">*</span></span>
+              <input id="patient-name" name="patientName" autocomplete="off" placeholder="Ej. Paciente de demostración" required>
+            </label>
+            <label class="field" for="patient-id"><span class="field-label">Documento / CC <span class="required">*</span></span>
+              <input id="patient-id" name="patientId" autocomplete="off" placeholder="Número de identificación" required>
+            </label>
+            <label class="field" for="patient-age"><span class="field-label">Edad <span class="required">*</span></span>
+              <div class="input-suffix"><input id="patient-age" name="age" type="number" min="0" max="120" placeholder="Edad" required><span>años</span></div>
+            </label>
+            <label class="field" for="patient-gender"><span class="field-label">Género <span class="required">*</span></span>
+              <select id="patient-gender" name="gender" required>
+                <option value="">Seleccionar</option><option>Mujer</option><option>Hombre</option><option>Otro</option><option>No especificado</option><option>Prefiere no indicarlo</option>
+              </select>
+            </label>
+            <label class="field" for="patient-condition">Condición reportada
+              <input id="patient-condition" name="condition" placeholder="Ej. Accidente de tránsito">
+            </label>
+            <label class="field field-wide" for="patient-description">Descripción y observaciones
+              <textarea id="patient-description" name="description" rows="2" placeholder="Motivo de consulta u observaciones registradas"></textarea>
+            </label>
+          </div>
+
+          <fieldset class="priority-field">
+            <legend>Nivel de triaje asignado <span class="required">*</span></legend>
+            <p class="field-hint">Selecciona el nivel definido por el personal de salud.</p>
+            <div class="priority-options" role="group" aria-label="Nivel de triaje">
+              <label class="priority-option"><input type="radio" name="priority" value="1"><span>Nivel 1</span></label>
+              <label class="priority-option"><input type="radio" name="priority" value="2"><span>Nivel 2</span></label>
+              <label class="priority-option"><input type="radio" name="priority" value="3"><span>Nivel 3</span></label>
+              <label class="priority-option"><input type="radio" name="priority" value="4"><span>Nivel 4</span></label>
+              <label class="priority-option"><input type="radio" name="priority" value="5"><span>Nivel 5</span></label>
+            </div>
+            <span id="priority-error" class="validation-message" aria-live="polite"></span>
+          </fieldset>
+
+          <fieldset class="vitals-field">
+            <legend>Signos vitales</legend>
+            <div class="field-grid vitals-grid">
+              <label class="field" for="vital-bp">Tensión arterial
+                <input id="vital-bp" name="bloodPressure" placeholder="120/80">
+              </label>
+              <label class="field" for="vital-pulse">Pulso
+                <div class="input-suffix"><input id="vital-pulse" name="pulse" type="number" min="0" placeholder="—"><span>lpm</span></div>
+              </label>
+              <label class="field" for="vital-resp">Frecuencia respiratoria
+                <div class="input-suffix"><input id="vital-resp" name="respiratoryRate" type="number" min="0" placeholder="—"><span>rpm</span></div>
+              </label>
+              <label class="field" for="vital-temp">Temperatura
+                <div class="input-suffix"><input id="vital-temp" name="temperature" type="number" min="0" step="0.1" placeholder="—"><span>°C</span></div>
+              </label>
+              <label class="field" for="vital-oxygen">Oxígeno
+                <div class="input-suffix"><input id="vital-oxygen" name="oxygen" type="number" min="0" max="100" placeholder="—"><span>%</span></div>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field-grid two-col care-grid">
+            <label class="field" for="care-status">Estado de atención
+              <select id="care-status" name="careStatus"><option>Pendiente</option><option>Atendido</option></select>
+            </label>
+            <label class="field" for="doctor-name">Nombre del médico
+              <input id="doctor-name" name="doctorName" placeholder="Por asignar">
+            </label>
+          </div>
+
+          <p id="form-message" class="form-message" aria-live="polite"></p>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit" id="submit-button"><span class="button-plus" aria-hidden="true">+</span> Registrar paciente</button>
+            <button class="button button-quiet" type="button" id="cancel-edit" hidden>Cancelar edición</button>
+            <span class="required-note"><span class="required">*</span> Campo obligatorio</span>
+          </div>
+        </form>
+      </section>
+
+      <section id="list-panel" class="panel list-panel" aria-labelledby="list-title">
+        <div class="panel-heading list-heading">
+          <div><p class="eyebrow">REGISTROS</p><h2 id="list-title">Lista de pacientes</h2></div>
+          <div class="patient-total"><strong id="patient-count">0</strong><span id="patient-count-label">pacientes</span></div>
+        </div>
+        <div class="list-controls">
+          <label class="search-box" for="patient-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <input id="patient-search" type="search" placeholder="Buscar por nombre o documento" autocomplete="off">
+          </label>
+          <label class="filter-box" for="priority-filter"><span class="sr-only">Filtrar por nivel</span>
+            <select id="priority-filter"><option value="">Todos los niveles</option><option value="1">Nivel 1</option><option value="2">Nivel 2</option><option value="3">Nivel 3</option><option value="4">Nivel 4</option><option value="5">Nivel 5</option></select>
+          </label>
+          <button id="import-csv-button" class="button button-outline import-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M4 14v6h16v-6"/></svg>
+            Importar CSV
+          </button>
+          <input id="csv-file" type="file" accept=".csv,text/csv" hidden>
+          <button id="clear-records" class="button button-outline" type="button" title="Eliminar todos los registros">Limpiar lista</button>
+        </div>
+        <div id="table-wrap" class="table-wrap">
+          <table>
+            <thead><tr><th>Paciente</th><th>Documento</th><th>Edad / género</th><th>Prioridad</th><th>Condición / observaciones</th><th>Signos vitales</th><th>Atención médica</th><th><span class="sr-only">Acciones</span></th></tr></thead>
+            <tbody id="patient-rows"></tbody>
+          </table>
+          <div id="empty-state" class="empty-state" hidden>
+            <span class="empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 4h8l3 3v13H5V4h3ZM8 4v5h8V4M8 15h8M8 18h5"/></svg>
+            </span>
+            <h3>No hay pacientes registrados</h3>
+            <p>Agrega uno desde el formulario o importa varios desde un archivo CSV.</p>
+          </div>
+        </div>
+        <div class="table-footer"><span id="showing-count">Mostrando 0 registros</span><span class="table-tools"><span>Orden: nivel 1 → 5</span><a href="plantilla_pacientes_triaje.csv" download>Plantilla CSV</a><a href="ejemplo_pacientes_triaje.csv" download>CSV de ejemplo</a></span></div>
+      </section>
+    </section>
+    <section id="patient-view" class="patient-view" hidden aria-label="Estado personal del paciente">
+      <div class="patient-welcome"><p class="eyebrow">CONSULTA PERSONAL</p><h2>Estado de tu atención</h2><p>Esta vista solo muestra la información vinculada a tu cuenta.</p></div>
+      <div id="patient-ticket" class="patient-ticket"></div>
+      <p class="patient-privacy">Por privacidad, aquí no se muestran los nombres ni la información de otros pacientes. La posición puede cambiar si el personal de salud actualiza la prioridad de atención.</p>
+    </section>
+  </main>
+  <dialog id="quick-consult-dialog" class="quick-consult-dialog" aria-labelledby="quick-consult-title">
+    <div class="quick-consult-dialog-heading">
+      <div><p class="eyebrow">CONSULTA RÁPIDA</p><h2 id="quick-consult-title">Consulta tu registro</h2></div>
+      <button id="quick-consult-close" class="quick-consult-close" type="button" aria-label="Cerrar consulta">×</button>
+    </div>
+    <form id="quick-consult-form" class="quick-consult-form">
+      <p class="quick-consult-explainer">Ingresa el número de documento del paciente para consultar al instante sus datos y el cupo en el que se encuentra.</p>
+      <label class="field" for="quick-consult-document">Número de documento / Cédula
+        <input id="quick-consult-document" name="document" autocomplete="off" placeholder="Ej. 1024501001" required>
+      </label>
+      <p id="quick-consult-error" class="login-error" role="alert" aria-live="polite"></p>
+      <button class="button button-primary" type="submit">Consultar cupo y datos</button>
+    </form>
+    <section id="quick-consult-result" hidden aria-live="polite"></section>
+  </dialog>
+  <dialog id="delete-dialog" class="quick-consult-dialog delete-dialog" aria-labelledby="delete-dialog-title">
+    <div class="quick-consult-dialog-heading">
+      <div><p class="eyebrow" style="color:#b54746">CONFIRMACIÓN DE SEGURIDAD</p><h2 id="delete-dialog-title">Eliminar paciente del sistema</h2></div>
+      <button id="delete-dialog-close" class="quick-consult-close" type="button" aria-label="Cerrar ventana">×</button>
+    </div>
+    <form id="delete-form" class="quick-consult-form">
+      <div class="delete-warning-box">
+        <p style="margin:0 0 6px">Estás a punto de eliminar definitivamente el registro de: <strong id="delete-patient-name"></strong>.</p>
+        <p class="delete-subtext">Esta acción eliminará sus datos clínicos y de triaje de la base de datos.</p>
+      </div>
+      <label class="field" for="delete-reason">
+        Motivo de la eliminación <span class="required">*</span>
+        <select id="delete-reason" name="reason" required>
+          <option value="">Selecciona un motivo</option>
+          <option value="Error de digitación en el registro">Error de digitación en el registro</option>
+          <option value="Registro duplicado">Registro duplicado</option>
+          <option value="Paciente se retira de la institución">Paciente se retira de la institución</option>
+          <option value="Ingreso cancelado por personal de salud">Ingreso cancelado por personal de salud</option>
+          <option value="Otro motivo clínico o administrativo">Otro motivo clínico o administrativo</option>
+        </select>
+      </label>
+      <label class="field" for="delete-confirm-input">
+        Para confirmar, escribe el documento del paciente (<span id="delete-patient-doc-hint" style="font-weight:700;color:#182334"></span>):
+        <input id="delete-confirm-input" autocomplete="off" placeholder="Escribe el documento aquí" required>
+      </label>
+      <p id="delete-dialog-error" class="login-error" role="alert" aria-live="polite"></p>
+      <div class="form-actions" style="margin-top:14px;justify-content:flex-end">
+        <button id="delete-dialog-cancel" class="button button-quiet" type="button">Cancelar</button>
+        <button id="delete-dialog-submit" class="button button-primary button-danger" type="submit" disabled>Confirmar eliminación</button>
+      </div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+nombre,documento,edad,genero,condicion,observaciones,nivel,tension,pulso,frecuencia_respiratoria,temperatura,oxigeno,estado_atencion,medico
+Carlos Alberto Gomez Restrepo,1024501001,54,Hombre,Dolor toracico opresivo,Refiere dolor precordial irradiado a mandibula y brazo izquierdo,1,90/60,118,26,36.2,89,Pendiente,Por asignar
+Maria Fernanda Perez Castro,1024501002,48,Mujer,Shock anafilactico,Edema de glotis y disnea subita tras ingesta de medicamento,1,80/50,130,30,36.4,88,Pendiente,Por asignar
+Juan David Morales Valencia,1024501003,29,Hombre,Politraumatismo grave,Accidente en motocicleta con alteracion del estado de conciencia,1,85/55,124,28,35.9,90,Pendiente,Por asignar
+Ana Sofia Ramirez Torres,1024501004,67,Mujer,Insuficiencia respiratoria aguda,Saturacion critica con cianosis distal y uso de musculos accesorios,1,95/60,112,32,36.8,85,Pendiente,Por asignar
+Diego Alejandro Ruiz Herrera,1024501005,62,Hombre,Sospecha de evento cerebrovascular,Hemiplejia derecha subita y afasia de expresion,1,190/110,98,22,36.6,92,Pendiente,Por asignar
+Laura Marcela Fernandez Benitez,1024501006,34,Mujer,Crisis asmatica severa,Disnea marcada con tirajes intercostales y sibilancias difusas,2,130/85,110,26,36.7,91,Pendiente,Por asignar
+Andres Felipe Medina Ochoa,1024501007,42,Hombre,Hemorragia digestiva alta,Episodio de hematemesis abundante con mareo y palidez,2,95/65,106,22,36.5,93,Pendiente,Por asignar
+Valentina Jaramillo Londono,1024501008,23,Mujer,Cefalea en trueno subita,Cefalea de inicio subito de maxima intensidad nunca antes experimentada,2,140/90,92,18,36.8,98,Pendiente,Por asignar
+Julian Esteban Vargas Mendez,1024501009,38,Hombre,Quemadura de segundo grado,Quemadura termica en torax y extremidades superiores,2,125/80,102,20,37.1,95,Pendiente,Por asignar
+Camila Andrea Henao Caicedo,1024501010,51,Mujer,Crisis hipertensiva con cefalea,Presion muy elevada acompanada de fosfenos y mareo intenso,2,185/115,96,20,36.6,96,Pendiente,Por asignar
+Santiago Jose Montoya Flores,1024501011,19,Hombre,Trauma ocular penetrante,Herida ocular por esquirla metalica en taller laboral,2,120/75,88,18,36.7,99,Pendiente,Por asignar
+Daniela Patricia Sanchez Aguirre,1024501012,28,Mujer,Dolor abdominal fosa iliaca,Sospecha de abdomen agudo quirurgico con dolor progresivo,2,115/75,98,20,38.3,97,Pendiente,Por asignar
+Mateo Nicolas Diaz Acosta,1024501013,45,Hombre,Fractura expuesta de tibia,Traumatismo directo con deformidad evidente y herida abierta,2,135/85,104,22,36.9,96,Pendiente,Por asignar
+Mariana Lucia Alvarez Romero,1024501014,31,Mujer,Reaccion alergica moderada,Edema facial y urticaria generalizada con prurito intenso,2,110/70,94,19,36.7,95,Pendiente,Por asignar
+Gabriel Eduardo Guzman Benitez,1024501015,59,Hombre,Sindrome coronario probable,Opresion retroesternal de 40 minutos sin cambios posturales,2,145/95,88,20,36.5,94,Pendiente,Por asignar
+Paula Andrea Castro Lopez,1024501016,36,Mujer,Sospecha de apendicitis aguda,Dolor que inicio periumbilical y migro a fosa iliaca derecha,3,120/80,86,18,38.2,98,Pendiente,Por asignar
+Luis Fernando Romero Diaz,1024501017,47,Hombre,Colico nefretico izquierdo,Dolor lumbar irradiado a region genital sin posicion antialgica,3,140/85,90,19,36.8,97,Pendiente,Por asignar
+Carolina Isabel Morales Sosa,1024501018,26,Mujer,Gastroenteritis con deshidratacion,Multiples deposiciones liquidas y emesis de 24 horas,3,105/65,96,18,37.6,98,Pendiente,Por asignar
+Javier Enrique Benitez Flores,1024501019,53,Hombre,Crisis hipertensiva asintomatica,Toma de control rutinaria con valores muy elevados sin sintomas,3,170/100,78,16,36.5,98,Pendiente,Por asignar
+Natalia Elena Ruiz Vargas,1024501020,40,Mujer,Colecistitis aguda probable,Dolor en hipocondrio derecho tras ingesta de alimentos grasos,3,125/80,88,18,38.0,97,Pendiente,Por asignar
+Felipe Andres Gomez Medina,1024501021,22,Hombre,Fractura cerrada de radio,Caida desde su propia altura mientras practicaba deporte,3,130/80,82,16,36.6,99,Pendiente,Por asignar
+Diana Marcela Torres Ochoa,1024501022,33,Mujer,Celulitis en pierna derecha,Placa eritematosa caliente dolorosa y con edema progresivo,3,118/76,84,17,38.5,98,Pendiente,Por asignar
+David Esteban Restrepo Jaramillo,1024501023,61,Hombre,Sindrome vertiginoso periferico,Mareo rotatorio intenso acompanado de nauseas e inestabilidad,3,135/85,80,16,36.6,98,Pendiente,Por asignar
+Isabel Cristina Fernandez Londono,1024501024,27,Mujer,Pielonefritis aguda sospechada,Fiebre alta con escalofrios disuria y dolor lumbar derecho,3,112/72,94,20,38.9,97,Pendiente,Por asignar
+Camilo Andres Henao Montoya,1024501025,35,Hombre,Herida profunda en antebrazo,Corte con vidrio con sangrado activo que cedio a compresion,3,122/78,86,17,36.7,99,Pendiente,Por asignar
+Patricia Elena Diaz Benitez,1024501026,50,Mujer,Lumbociatica aguda incapacitante,Dolor radicular intenso que impide la marcha normal,3,130/82,78,16,36.6,98,Pendiente,Por asignar
+Sebastian David Caicedo Guzman,1024501027,18,Hombre,Trauma craneal leve sin conmocion,Golpe en partido de futbol sin perdida de conciencia,3,115/70,74,16,36.7,99,Pendiente,Por asignar
+Sandra Milena Perez Alvarez,1024501028,44,Mujer,Epistaxis moderada persistente,Sangrado nasal anterior que no remite tras compresion de 20 min,3,145/90,86,18,36.8,97,Pendiente,Por asignar
+Leonardo Fabio Martinez Romero,1024501029,56,Hombre,Descompensacion hiperglucemica,Glucemia elevada con polidipsia y astenia marcada,3,128/80,88,18,36.9,97,Pendiente,Por asignar
+Claudia Viviana Lopez Mendez,1024501030,30,Mujer,Mastitis puerperal,Dolor eritema y calor en mama derecha con fiebre de 24 horas,3,110/70,92,18,38.4,98,Pendiente,Por asignar
+Jorge Ivan Sanchez Castro,1024501031,43,Hombre,Dolor toracico osteomuscular,Dolor punzante reproducible a la palpacion condrocostal,4,120/75,76,16,36.6,99,Pendiente,Por asignar
+Juliana Andrea Ramirez Flores,1024501032,25,Mujer,Esguince de tobillo derecho,Inversion forzada con dolor e inflamacion sin deformidad,4,115/72,74,16,36.5,99,Pendiente,Por asignar
+Manuel Antonio Gomez Vargas,1024501033,65,Hombre,Lumbalgia mecanica aguda,Dolor lumbar tras levantar peso sin irradiacion neurologica,4,130/80,72,16,36.5,98,Pendiente,Por asignar
+Monica Maria Ochoa Herrera,1024501034,39,Mujer,Infeccion urinaria baja,Disuria polaquiuria y tenesmo vesical sin fiebre,4,118/74,78,16,36.8,99,Pendiente,Por asignar
+Alejandro Jose Medina Restrepo,1024501035,21,Hombre,Traumatismo leve en rodilla,Contusion por golpe directo con dolor leve a la flexion,4,122/76,70,15,36.6,99,Pendiente,Por asignar
+Valeria Sofia Jaramillo Caicedo,1024501036,28,Mujer,Faringoamigdalitis aguda,Odinofagia intensa con placas exudativas y adenopatias,4,110/68,82,17,37.8,98,Pendiente,Por asignar
+Mario Alberto Alvarez Londono,1024501037,49,Hombre,Otitis media aguda,Otalgia derecha punzante con sensacion de taponamiento,4,124/80,75,16,37.4,99,Pendiente,Por asignar
+Gabriela Ines Montoya Benitez,1024501038,32,Mujer,Gastroenteritis leve,Tres deposiciones blandas con colico abdominal leve,4,108/66,80,16,37.1,99,Pendiente,Por asignar
+Rafael Vicente Morales Diaz,1024501039,58,Hombre,Herida superficial en mano,Corte accidental con cuchillo de cocina bordes limpios,4,126/78,74,16,36.5,99,Pendiente,Por asignar
+Elena Maria Ruiz Henao,1024501040,46,Mujer,Tendinitis hombro derecho,Dolor en abduccion del brazo de tres semanas de evolucion,4,120/75,70,15,36.6,99,Pendiente,Por asignar
+Esteban Camilo Fernandez Guzman,1024501041,20,Hombre,Contusion toracica menor,Golpe leve sin alteracion de dinamica ventilatoria,4,118/72,72,16,36.5,99,Pendiente,Por asignar
+Luisa Fernanda Benitez Perez,1024501042,37,Mujer,Picadura de insecto,Lesion papular con eritema local y prurito moderado,4,114/70,76,16,36.7,99,Pendiente,Por asignar
+Jose Miguel Sanchez Romero,1024501043,52,Hombre,Dermatitis de contacto,Erupcion eccematosa en manos tras contacto con quimico de limpieza,4,128/82,72,16,36.6,98,Pendiente,Por asignar
+Andrea Carolina Castro Acosta,1024501044,29,Mujer,Sinusitis maxilar aguda,Dolor facial con congestion nasal y rinorrea purulenta,4,116/74,78,16,37.3,99,Pendiente,Por asignar
+Fernando Luis Vargas Flores,1024501045,63,Hombre,Mialgia generalizada post esfuerzo,Dolor muscular difuso tras jornada intensa de trabajo,4,132/84,70,15,36.5,98,Pendiente,Por asignar
+Adriana Rocio Romero Diaz,1024501046,41,Mujer,Conjuntivitis bacteriana probable,Secrecion mucopurulenta bilateral con ojo rojo y sensacion de arenilla,5,115/75,70,15,36.5,99,Pendiente,Por asignar
+Hector Fabio Morales Restrepo,1024501047,55,Hombre,Resfriado comun,Congestion nasal estornudos y malestar general de dos dias,5,120/78,68,16,36.7,98,Pendiente,Por asignar
+Sonia Elizabeth Alvarez Guzman,1024501048,34,Mujer,Rinorrea y estornudos,Sintomas catarrales leves sin compromiso del estado general,5,110/70,72,16,36.6,99,Pendiente,Por asignar
+Victor Hugo Perez Jaramillo,1024501049,60,Hombre,Cefalea tensional leve,Cefalea holocraneal opresiva vespertina de leve intensidad,5,124/80,68,15,36.5,99,Pendiente,Por asignar
+Gloria Stella Medina Londono,1024501050,68,Mujer,Solicitud de renovacion de formula,Paciente con medicacion cronica habitual para control regular,5,130/82,66,15,36.6,98,Pendiente,Por asignar
+Cesar Augusto Torres Caicedo,1024501051,45,Hombre,Astenia cronica leve,Cansancio habitual sin sintomas agudos de alarma,5,118/76,70,16,36.5,99,Pendiente,Por asignar
+Luz Marina Flores Montoya,1024501052,53,Mujer,Dispepsia funcional,Sensacion de pesadez postprandial sin dolor agudo ni vomitos,5,116/74,72,16,36.6,98,Pendiente,Por asignar
+Ricardo Andres Benitez Henao,1024501053,38,Hombre,Aftas bucales dolorosas,Pequenas ulceras dolorosas en mucosa oral sin fiebre,5,118/76,70,15,36.5,99,Pendiente,Por asignar
+Martha Lucia Diaz Vargas,1024501054,64,Mujer,Revision de curacion menor,Herida cerrada previamente atendida que requiere retiro de suturas,5,122/78,68,16,36.6,99,Pendiente,Por asignar
+Alvaro Jose Castro Sanchez,1024501055,42,Hombre,Trastorno del sueno e insomnio,Dificultad de conciliacion de sueno de varias semanas,5,120/80,65,15,36.5,98,Pendiente,Por asignar
+Guillermo Leon Romero Acosta,1024501056,57,Hombre,Sospecha de infarto en curso,Dolor retroesternal opresivo con disnea marcada y palidez,1,88/58,114,26,36.3,89,Pendiente,Por asignar
+Silvia Patricia Gomez Alvarez,1024501057,71,Mujer,Edema agudo de pulmon,Disnea paroxistica extrema con expectoracion asalmonada y taquipnea,1,195/105,120,34,36.5,86,Pendiente,Por asignar
+Mauricio Andres Morales Flores,1024501058,35,Hombre,Trauma severo de torax,Accidente de transito con contusion toracica y dificultad ventilatoria,1,92/60,116,28,36.4,90,Pendiente,Por asignar
+Beatriz Elena Jaramillo Medina,1024501059,63,Mujer,Accidente cerebrovascular isquemico,Hemiparesia izquierda de 2 horas de evolucion y disartria,1,180/100,90,20,36.7,92,Pendiente,Por asignar
+Edwin Orlando Perez Londono,1024501060,26,Hombre,Neumotorax a tension presuntivo,Dolor toracico subito con hipotension y timpanismo unilateral,1,85/50,128,30,36.1,87,Pendiente,Por asignar
+Angela Maria Restrepo Caicedo,1024501061,49,Mujer,Pancreatitis aguda probable,Dolor epigastrico transfictivo en cinturon con vomitos incoercibles,2,130/85,104,22,37.8,95,Pendiente,Por asignar
+Oscar Ivan Montoya Benitez,1024501062,54,Hombre,Obstruccion intestinal incipiente,Distension abdominal marcada vomitos fecaloideos y ausencia de gases,2,110/70,98,20,37.4,94,Pendiente,Por asignar
+Lina Marcela Vargas Guzman,1024501063,33,Mujer,Crisis tireotoxica presunta,Taquicardia marcada sudoracion temblor distal y fiebre,2,145/80,126,24,38.6,96,Pendiente,Por asignar
+Ruben Dario Castro Diaz,1024501064,46,Hombre,Trombosis venosa profunda sospechada,Edema asimetrico en extremidad inferior izquierda con calor y dolor,2,125/80,90,18,37.2,96,Pendiente,Por asignar
+Yolanda Ines Alvarez Henao,1024501065,58,Mujer,Sindrome confusional agudo,Desorientacion temporoespacial subita en paciente previamente lucida,2,135/85,86,18,37.3,95,Pendiente,Por asignar
+Rodrigo Alonso Gomez Sanchez,1024501066,39,Hombre,Loxoscelismo sospechado,Mordedura de arana con placa liveloide y dolor creciente,2,120/75,94,18,37.5,96,Pendiente,Por asignar
+Clara Ines Benitez Romero,1024501067,61,Mujer,Deshidratacion hiperosmolar,Sed extrema letargia y sequedad intensa de mucosas,2,100/65,108,22,37.0,94,Pendiente,Por asignar
+Nelson Enrique Diaz Morales,1024501068,52,Hombre,Fractura de cadera,Caida de propia altura con imposibilidad funcional y acortamiento,2,140/90,92,18,36.8,97,Pendiente,Por asignar
+Esperanza Gomez Flores,1024501069,66,Mujer,Sepsis de foco urinario,Fiebre alta taquicardia hipotension y deterioro general,2,95/60,110,24,39.1,93,Pendiente,Por asignar
+Jaime Alberto Torres Restrepo,1024501070,44,Hombre,Desprendimiento de retina sospechado,Perdida subita de campo visual con fotopsias y miodesopsias,2,130/80,82,16,36.6,98,Pendiente,Por asignar
+Dora Luz Londono Medina,1024501071,59,Mujer,Artritis septica probable,Rodilla derecha eritematosa muy caliente con derrame articular,3,128/82,88,18,38.6,97,Pendiente,Por asignar
+Hernando Jose Caicedo Jaramillo,1024501072,67,Hombre,Hernia inguinal incarcerada,Masa dolorosa no reductible en region inguinal de inicio agudo,3,135/85,86,18,37.1,97,Pendiente,Por asignar
+Liliana Maria Perez Benitez,1024501073,31,Mujer,Hemorragia uterina anormal,Sangrado ginecologico abundante que no cede,3,105/68,90,18,36.6,98,Pendiente,Por asignar
+German Dario Alvarez Vargas,1024501074,48,Hombre,Colangitis leve a moderada,Ictericia fiebre y dolor en hipocondrio derecho,3,122/78,92,20,38.3,96,Pendiente,Por asignar
+Blanca Nubia Castro Montoya,1024501075,55,Mujer,Sindrome febril prolongado,Picos febriles diarios de 5 dias sin foco evidente,3,115/72,88,18,38.7,98,Pendiente,Por asignar
+Fabio Nelson Henao Morales,1024501076,37,Hombre,Traumatismo costal cerrado,Contusion en hemitorax izquierdo con dolor al toser,3,128/80,80,18,36.7,97,Pendiente,Por asignar
+Maribel Cristina Romero Gomez,1024501077,43,Mujer,Diarrea aguda disentérica,Deposiciones mucosanguinolentas con pujo y tenesmo,3,110/70,94,18,38.2,98,Pendiente,Por asignar
+Raul Antonio Diaz Sanchez,1024501078,50,Hombre,Lumbalgia hiperaguda,Espasmo muscular lumbar severo con postura antialgica rigida,3,138/88,78,16,36.6,98,Pendiente,Por asignar
+Olga Lucia Flores Benitez,1024501079,62,Mujer,Hipertension arterial reactiva,Cefalea occipital leve con cifras tensionales de 160/95,3,160/95,76,16,36.7,97,Pendiente,Por asignar
+Gustavo Adolfo Vargas Romero,1024501080,29,Hombre,Quemadura quimica en mano,Exposicion a sustancia corrosiva en area industrial,3,124/78,82,16,36.8,99,Pendiente,Por asignar
+Rocio del Carmen Medina Perez,1024501081,36,Mujer,Sinusitis con celulitis periorbitaria,Edema palpebral y dolor facial con fiebre moderada,3,118/74,86,18,38.1,98,Pendiente,Por asignar
+Wilson Fernando Jaramillo Torres,1024501082,41,Hombre,Uveitis anterior aguda,Ojo rojo doloroso fotofobia y miosis,3,120/78,76,16,36.6,99,Pendiente,Por asignar
+Stella Maris Londono Castro,1024501083,57,Mujer,Absceso gluteo doloroso,Masa fluctuante con rubor calor y drenaje espontaneo minimo,3,126/80,84,17,37.9,98,Pendiente,Por asignar
+Albeiro de Jesus Caicedo Alvarez,1024501084,65,Hombre,Prostatismo agudo con retencion parcial,Dificultad marcada para miccion con dolor suprapubico,3,142/86,80,16,36.8,97,Pendiente,Por asignar
+Amparo del Socorro Benitez Diaz,1024501085,69,Mujer,Tromboflebitis superficial,Cordon venoso indurado y doloroso en extremidad inferior,3,130/82,78,16,37.2,98,Pendiente,Por asignar
+Nestor Raul Gomez Montoya,1024501086,30,Hombre,Esguince de rodilla izquierda,Movimiento rotacional doloroso con leve derrame articular,4,122/76,72,16,36.6,99,Pendiente,Por asignar
+Adriana Maria Morales Henao,1024501087,27,Mujer,Cistitis aguda recurrente,Ardor al orinar y orina turbia sin dolor en fosas lumbares,4,112/70,76,16,36.7,99,Pendiente,Por asignar
+Carlos Mario Restrepo Flores,1024501088,48,Hombre,Torticolis espasmodica,Rigidez en cuello y desviacion dolorosa lateral,4,125/80,70,15,36.5,99,Pendiente,Por asignar
+Luz Dary Sanchez Romero,1024501089,40,Mujer,Dismenorrea severa,Dolor pelvico espasmodico coincidente con periodo menstrual,4,110/68,78,16,36.8,99,Pendiente,Por asignar
+Jhon Jairo Vargas Diaz,1024501090,34,Hombre,Herida cortante superficial en pulgar,Herida lineal limpia que no compromete tendones,4,118/74,74,16,36.5,99,Pendiente,Por asignar
+Martha Ines Alvarez Benitez,1024501091,52,Mujer,Tendinitis de De Quervain,Dolor en estiloides radial al movimiento de pinza manual,4,120/76,68,15,36.6,98,Pendiente,Por asignar
+Henry Alberto Perez Castro,1024501092,46,Hombre,Fascitis plantar aguda,Dolor punzante en talon al iniciar la marcha,4,128/82,72,16,36.5,99,Pendiente,Por asignar
+Maria Eugenia Londono Morales,1024501093,60,Mujer,Bursitis trocanterea,Dolor a la palpacion lateral de cadera sin caida previa,4,132/84,70,15,36.6,98,Pendiente,Por asignar
+Bernardo Antonio Jaramillo Gomez,1024501094,56,Hombre,Otitis externa difusa,Dolor intenso a la traccion del pabellon auricular,4,124/78,74,16,37.0,99,Pendiente,Por asignar
+Diana Patricia Caicedo Torres,1024501095,35,Mujer,Gingivitis con dolor dental,Dolor gingival localizado tras inflamacion periodontal,4,114/72,76,16,36.9,99,Pendiente,Por asignar
+Alexander Jose Flores Medina,1024501096,28,Hombre,Traumatismo dedo del pie,Golpe directo contra mueble sin herida abierta ni deformidad,4,120/75,70,16,36.5,99,Pendiente,Por asignar
+Yady Viviana Benitez Sanchez,1024501097,31,Mujer,Rinofaringitis con tos seca,Tos irritativa y dolor faringeo de tres dias de duracion,4,110/70,80,16,37.2,99,Pendiente,Por asignar
+Gabriel Jaime Diaz Alvarez,1024501098,63,Hombre,Eritema solar de hombros y espalda,Quemadura por exposicion solar prolongada sin flictenas,4,130/80,72,16,37.1,98,Pendiente,Por asignar
+Maria Consuelo Romero Vargas,1024501099,47,Mujer,Gastritis aguda medicamentosa,Epigastralgia urente tras toma de antiinflamatorios,4,118/74,74,16,36.6,99,Pendiente,Por asignar
+Wilmar Andres Montoya Restrepo,1024501100,23,Hombre,Contusion antebrazo izquierdo,Hematoma localizado tras choque en entrenamiento deportivo,4,122/76,68,15,36.5,99,Pendiente,Por asignar
+Luz Angela Henao Castro,1024501101,38,Mujer,Psoriasis con brote agudo leve,Placas descamativas pruriginosas en codos y rodillas,5,112/70,68,15,36.5,99,Pendiente,Por asignar
+Jorge Hernan Morales Londono,1024501102,66,Hombre,Revision de presion arterial,Control voluntario sin quejas somaticas activas,5,126/80,66,15,36.5,98,Pendiente,Por asignar
+Maritza del Pilar Gomez Jaramillo,1024501103,42,Mujer,Rinitis alergica estacional,Salvas de estornudos prurito nasal y congestion ocular,5,115/72,70,16,36.6,99,Pendiente,Por asignar
+Camilo Ernesto Torres Benitez,1024501104,50,Hombre,Constipacion funcional leve,Tres dias sin deposicion con leve molestia abdominal,5,120/78,68,15,36.6,98,Pendiente,Por asignar
+Nohora Ines Alvarez Caicedo,1024501105,58,Mujer,Verruga plantar dolorosa,Lesion queratosica en talon que causa molestia al calzado,5,118/74,66,15,36.5,99,Pendiente,Por asignar
+Fabian Andres Diaz Flores,1024501106,25,Hombre,Dolor muscular post entrenamiento,Agujetas intensas tras sesion de gimnasio sin desgarro,5,116/72,68,15,36.5,99,Pendiente,Por asignar
+Myriam Stella Sanchez Medina,1024501107,64,Mujer,Certificado medico de aptitud,Solicitud de valoracion basica para tramite laboral,5,124/78,65,15,36.5,98,Pendiente,Por asignar
+Elkin Dario Romero Restrepo,1024501108,44,Hombre,Micosis ungueal en pie,Uña engrosada y amarillenta sin signos inflamatorios agudos,5,120/76,70,16,36.6,99,Pendiente,Por asignar
+Dora Ines Vargas Benitez,1024501109,70,Mujer,Consulta por insomnio cronico,Trastorno de mantenimiento del sueno sin otra sintomatologia,5,130/82,64,14,36.5,98,Pendiente,Por asignar
+Fredy Alexander Castro Gomez,1024501110,36,Hombre,Fatiga y estres laboral,Sobrecarga de trabajo con tension muscular de nuca leve,5,122/78,68,15,36.5,99,Pendiente,Por asignar
+Lina Paola Montoya Londono,1024501111,29,Mujer,Dermatitis seborreica facial,Descamacion y eritema en surcos nasogenianos,5,110/68,70,16,36.6,99,Pendiente,Por asignar
+German Alonso Jaramillo Henao,1024501112,53,Hombre,Hiperqueratosis en pies,Callosidades dolorosas que no limitan totalmente la marcha,5,124/80,66,15,36.5,98,Pendiente,Por asignar
+Luz Helena Flores Morales,1024501113,49,Mujer,Sintomas vasomotores climatéricos,Sofocos esporadicos y cambios de temperatura corporal,5,118/75,72,16,36.7,99,Pendiente,Por asignar
+Jose Fernando Caicedo Benitez,1024501114,62,Hombre,Control rutinario de glucemia capilar,Paciente diabetico controlado que solicita verificacion,5,128/82,68,15,36.6,98,Pendiente,Por asignar
+Ana Milena Alvarez Diaz,1024501115,37,Mujer,Alopecia difusa leve,Caida de cabello acentuada en ultimas semanas sin placas,5,114/72,70,16,36.5,99,Pendiente,Por asignar
+
+Samuel David Ospina Mejia,1024501116,68,Hombre,Infarto con elevacion del ST,Dolor precordial con choque cardiogenico incipiente,1,80/50,122,28,36.1,88,Pendiente,Por asignar
+Manuela Sofia Betancur Giraldo,1024501117,21,Mujer,Shock hipovolemico por hemorragia,Herida por proyectil de arma de fuego en muslo con sangrado masivo,1,75/45,136,30,35.8,89,Pendiente,Por asignar
+Nicolas Andres Cardona Zuluaga,1024501118,33,Hombre,Estatus epileptico convulsivo,Crisis convulsivas tonico clonicas generalizadas continuas sin recuperacion,1,140/95,128,26,38.2,90,Pendiente,Por asignar
+Sara Valentina Quintero Aristizabal,1024501119,56,Mujer,Obstruccion de via aerea por cuerpo extrano,Estridor laringeo marcado con cianosis perioral y asfixia,1,150/100,130,36,36.5,82,Pendiente,Por asignar
+Joaquin Alberto Castrillon Echeverri,1024501120,74,Hombre,Paro cardiorrespiratorio revertido,Paciente reanimado extrahospitalariamente con soporte ventilatorio,1,90/60,110,24,35.5,91,Pendiente,Por asignar
+Salome Lucia Botero Palacio,1024501121,29,Mujer,Embolia pulmonar masiva presunta,Disnea subita colapso circulatorio y dolor pleuritico severo,1,85/55,125,32,36.3,86,Pendiente,Por asignar
+Emilio Jose Osorio Piedrahita,1024501122,45,Hombre,Abdomen agudo perforativo,Vientre en tabla con dolor abdominal generalizado y fiebre,2,105/65,108,22,38.5,94,Pendiente,Por asignar
+Antonia Maria Ceballos Arango,1024501123,38,Mujer,Cetoacidosis diabetica moderada,Respiracion de Kussmaul aliento cetonico y deshidratacion,2,110/70,112,28,37.0,95,Pendiente,Por asignar
+Tomas Felipe Villegas Saldarriaga,1024501124,52,Hombre,Taquicardia paroxistica supraventricular,Palpitaciones intensas mareo y sensacion de desmayo inminente,2,100/60,175,22,36.6,96,Pendiente,Por asignar
+Samantha Ines Urrego Tabares,1024501125,26,Mujer,Embarazo ectopico roto sospechado,Dolor hipogastrico subito y metrorragia con hipotension ortostatica,2,90/60,114,20,36.8,95,Pendiente,Por asignar
+Martin Eduardo Bedoya Tamayo,1024501126,60,Hombre,Aneurisma de aorta abdominal sintomatico,Dolor pulsatil lumbar y abdominal de inicio agudo,2,155/95,96,20,36.7,96,Pendiente,Por asignar
+Victoria Eugenia Galeano Marulanda,1024501127,42,Mujer,Meningitis aguda probable,Fiebre alta rigidez de nuca y fotofobia intensa,2,125/80,104,22,39.2,96,Pendiente,Por asignar
+Simon David Carvajal Yepes,1024501128,31,Hombre,Amputacion traumatica de falange,Accidente con sierra circular con sangrado activo compresible,2,120/75,98,18,36.7,98,Pendiente,Por asignar
+Renata Sofia Hoyos Buitrago,1024501129,49,Mujer,Angina inestable de reciente comienzo,Opresion toracica de reposo de 20 minutos recurrente,2,140/90,88,19,36.6,95,Pendiente,Por asignar
+Alvaro Gonzalo Duque Agudelo,1024501130,67,Hombre,Retencion urinaria aguda masiva,Globo vesical palpable y dolor pelvico intolerable,2,160/95,92,18,36.8,97,Pendiente,Por asignar
+Julieta Carolina Serna Cano,1024501131,18,Mujer,Intoxicacion medicamentosa voluntaria,Ingesta de multiples tabletas de analgesicos hace 1 hora,2,115/70,86,16,36.5,97,Pendiente,Por asignar
+Alfonso Enrique Maya Velez,1024501132,58,Hombre,Insuficiencia arterial aguda de miembro inferior,Pierna derecha fria palida y sin pulsos distales,2,135/85,90,18,36.4,96,Pendiente,Por asignar
+Clara Patricia Toro Ospina,1024501133,35,Mujer,Hemoptisis moderada en estudio,Expectoracion con sangre roja rutilante de 100 ml en 4 horas,2,118/74,96,22,37.3,93,Pendiente,Por asignar
+Gonzalo Javier Betancur Zuluaga,1024501134,40,Hombre,Neumonia lobar con hipoxemia,Condensacion pulmonar derecha con fiebre y disnea progresiva,2,122/78,102,26,38.8,91,Pendiente,Por asignar
+Irene Marcela Giraldo Mejia,1024501135,64,Mujer,Sindrome de Horner agudo,Ptosis miosis y dolor cervical tras esfuerzo fisico intenso,2,150/90,80,16,36.7,97,Pendiente,Por asignar
+Ernesto Fabio Cardona Palacio,1024501136,71,Hombre,Sangrado rectal activo profuso,Hematoquecia abundante con palidez mucocutanea,2,95/60,106,20,36.5,94,Pendiente,Por asignar
+Alicia Maria Quintero Echeverri,1024501137,53,Mujer,Crisis de glaucoma agudo de angulo cerrado,Dolor ocular severo halo alrededor de luces y nauseas,2,145/90,88,18,36.8,98,Pendiente,Por asignar
+Hugo Armando Aristizabal Botero,1024501138,37,Hombre,Neumotorax espontaneo primario,Dolor pleuritico derecho subito y disminucion del murmullo vesicular,2,125/80,94,24,36.6,92,Pendiente,Por asignar
+Silvia Cristina Ceballos Osorio,1024501139,28,Mujer,Urticaria gigante y angioedema labial,Reaccion alimentaria aguda sin compromiso respiratorio alto todavia,2,115/72,98,19,36.7,96,Pendiente,Por asignar
+Arturo Fernando Piedrahita Arango,1024501140,46,Hombre,Colico biliar complicado,Dolor en hipocondrio derecho irradiado a escapula de 5 horas,3,130/85,84,18,37.7,98,Pendiente,Por asignar
+Elisa Beatriz Villegas Mejia,1024501141,32,Mujer,Salpingitis aguda sospechada,Dolor pelvico bilateral con leucorrea y fiebre de 38 grados,3,118/76,88,18,38.2,98,Pendiente,Por asignar
+Jaime Leon Saldarriaga Tabares,1024501142,63,Hombre,Prostatitis aguda bacteriana,Fiebre alta escalofrios y disuria severa con dolor perineal,3,125/80,92,18,38.6,97,Pendiente,Por asignar
+Esther Maria Urrego Bedoya,1024501143,57,Mujer,Hipertension arterial estadio 2 con cefalea,Cifras de 175/105 con sensacion de pesadez craneal,3,175/105,82,16,36.6,98,Pendiente,Por asignar
+Ramiro Antonio Tamayo Galeano,1024501144,50,Hombre,Fractura de clavicula izquierda,Caida en bicicleta con deformidad de tercio medio clavicular,3,132/84,80,16,36.7,99,Pendiente,Por asignar
+Teresa de Jesus Marulanda Carvajal,1024501145,69,Mujer,Ulcera peptica con epigastralgia aguda,Dolor urente severo que empeora en ayunas sin sangrado visible,3,120/75,78,16,36.6,98,Pendiente,Por asignar
+Cesar Augusto Yepes Hoyos,1024501146,27,Hombre,Absceso periamigdalino probable,Trismus disfagia intensa y voz de papa caliente,3,122/78,86,18,38.4,98,Pendiente,Por asignar
+Raquel Elena Buitrago Duque,1024501147,44,Mujer,Sindrome nefritico en estudio,Edema matutino facial hematuria microscopica e hipertension,3,150/95,76,16,36.7,98,Pendiente,Por asignar
+Armando Jose Serna Agudelo,1024501148,39,Hombre,Luxacion anterior glenohumeral,Caida con brazo en abduccion y rotacion externa signo de charretera,3,135/85,88,18,36.6,99,Pendiente,Por asignar
+Rocio Ines Cano Maya,1024501149,36,Mujer,Cistitis complicada con fiebre,Dolor suprapubico disuria y pico febril de 38.3 grados,3,114/72,86,17,38.3,98,Pendiente,Por asignar
+Julio Cesar Velez Toro,1024501150,65,Hombre,Bronquiectasias sobreinfectadas,Aumento de tos expectoracion purulenta abundante y fiebre,3,130/80,90,22,38.1,94,Pendiente,Por asignar
+Lorena Patricia Agudelo Ospina,1024501151,25,Mujer,Apendicitis en fase flegmonosa sospechada,Signo de Blumberg positivo con dolor en fosa iliaca derecha,3,116/74,90,18,38.0,98,Pendiente,Por asignar
+Ignacio David Betancur Giraldo,1024501152,48,Hombre,Trombosis hemorroidal externa aguda,Masa perianal violacea extremadamente dolorosa que impide sentarse,3,128/82,78,16,36.6,98,Pendiente,Por asignar
+Pilar Eugenia Zuluaga Cardona,1024501153,55,Mujer,Polimialgia reumatica con dolor intenso,Rigidez matutina severa en cintura escapular y pelvica,3,135/85,74,16,37.2,98,Pendiente,Por asignar
+Enrique Alonso Quintero Mejia,1024501154,59,Hombre,Pielonefritis aguda izquierda,Dolor punzante fosa lumbar izquierda y nausea persistente,3,120/75,88,18,38.5,97,Pendiente,Por asignar
+Carmen Rosa Castrillon Palacio,1024501155,72,Mujer,Descompensacion por insuficiencia cardiaca leve,Disnea de medianos esfuerzos con edemas maleolares bilaterales,3,145/85,82,20,36.6,95,Pendiente,Por asignar
+Pablo Emilio Echeverri Botero,1024501156,34,Hombre,Trauma facial con sospecha de fractura nasal,Golpe contuso con epistaxis reducida y desviacion de tabique,3,126/80,78,16,36.7,99,Pendiente,Por asignar
+Mercedes Ines Arango Osorio,1024501157,61,Mujer,Neuralgia del trigemino crisis aguda,Descargas lancinantes en hemifara derecha de extrema intensidad,3,140/85,84,17,36.6,98,Pendiente,Por asignar
+Lucas Fernando Piedrahita Ceballos,1024501158,22,Hombre,Orquiepididimitis aguda derecha,Dolor testicular agudo con aumento de tamano y eritema escrotal,3,120/76,82,16,37.9,99,Pendiente,Por asignar
+Leonor Sofia Villegas Saldarriaga,1024501159,47,Mujer,Erisipela en miembro superior,Placa eritematosa de bordes definidos caliente y dolorosa,3,122/78,86,17,38.3,98,Pendiente,Por asignar
+Bruno Andres Tabares Urrego,1024501160,41,Hombre,Luxofractura de tobillo cerrada,Deformidad articular con dolor agudo e impotencia funcional,3,134/86,84,17,36.7,99,Pendiente,Por asignar
+Ines Maria Bedoya Tamayo,1024501161,58,Mujer,Ulcera corneal con dolor ocular severo,Sensacion de cuerpo extrano ojo rojo lagrimeo y perdida de agudeza,3,125/80,76,16,36.6,98,Pendiente,Por asignar
+German Alberto Galeano Marulanda,1024501162,53,Hombre,Hernia discal lumbar con paresia leve,Dolor ciatico irradiado a pie con debilidad para dorsiflexion,3,130/82,74,16,36.6,98,Pendiente,Por asignar
+Miriam Stella Carvajal Yepes,1024501163,37,Mujer,Anemia sintomatica moderada,Palidez mucocutanea acentuada mareo postural y taquicardia sinusal,3,100/65,96,18,36.5,98,Pendiente,Por asignar
+Agustin Jose Hoyos Buitrago,1024501164,66,Hombre,Encefalopatia hepatica grado I incipiente,Asterixis leve e inversion del ritmo sueno vigilia en cirrotico,3,115/70,80,16,36.8,97,Pendiente,Por asignar
+Susana Beatriz Duque Agudelo,1024501165,30,Mujer,Colitis ulcerosa brote moderado,Seis deposiciones con sangre y dolor en marco colico de 3 dias,3,110/68,88,17,37.6,98,Pendiente,Por asignar
+Daniel Esteban Serna Cano,1024501166,26,Hombre,Herida por mordedura canina,Desgarro en pierna izquierda con bordes irregulares,3,124/78,80,16,36.8,99,Pendiente,Por asignar
+Eugenia Patricia Maya Velez,1024501167,68,Mujer,Spondilodiscitis sospechada,Dolor vertebral localizado persistente con fiebre baja intermitente,3,128/80,76,16,37.8,98,Pendiente,Por asignar
+Samuel Alberto Toro Ospina,1024501168,43,Hombre,Hematoma subungueal a tension masivo,Trauma por aplastamiento en pulpejo con dolor pulsatil extremo,3,130/85,78,16,36.6,99,Pendiente,Por asignar
+Beatriz Elena Giraldo Betancur,1024501169,51,Mujer,Tirotoxicosis con taquiarritmia,Perdida ponderal sudoracion palpitaciones y temblor de manos,3,142/88,106,19,37.4,97,Pendiente,Por asignar
+Joaquin Manuel Cardona Zuluaga,1024501170,70,Hombre,Ictericia obstructiva dolorosa,Tinte icterico en escleras orina colurica y dolor epigastrico,3,135/80,80,17,37.2,97,Pendiente,Por asignar
+Salome Cristina Quintero Mejia,1024501171,24,Mujer,Sindrome de abstinencia alcoholica moderado,Temblor marcado sudoracion diaforetica ansiedad e insomnio,3,148/92,102,20,37.3,98,Pendiente,Por asignar
+Nicolas Felipe Echeverri Palacio,1024501172,38,Hombre,Fractura de costillas 7 y 8 izquierdas,Dolor pleuritico intenso a la palpacion toracica tras caida,3,126/80,82,18,36.7,96,Pendiente,Por asignar
+Manuela Ines Botero Osorio,1024501173,45,Mujer,Mastitis abscedada derecha,Masa eritematosa fluctuante muy dolorosa en cuadrante externo,3,118/74,88,17,38.4,98,Pendiente,Por asignar
+Tomas Alejandro Arango Ceballos,1024501174,62,Hombre,Sincope vasovagal con trauma leve,Episodio sincopal breve con recuperacion completa y contusion frontal,3,120/75,72,16,36.5,99,Pendiente,Por asignar
+Antonia Lucia Piedrahita Villegas,1024501175,33,Mujer,Panadizo subungueal agudo,Inflamacion purulenta en borde ungueal de dedo medio con pulsacion,3,114/70,76,16,37.1,99,Pendiente,Por asignar
+Martin Alonso Saldarriaga Tabares,1024501176,29,Hombre,Esguince de muñeca derecha,Hiperextension forzada con dolor a la flexoextension sin crepitos,4,120/76,72,16,36.6,99,Pendiente,Por asignar
+Sara Marcela Urrego Bedoya,1024501177,21,Mujer,Disuria simple no febril,Sintomas urinarios bajos de 24 horas sin dolor lumbar,4,112/68,74,16,36.7,99,Pendiente,Por asignar
+Simon Andres Tamayo Marulanda,1024501178,35,Hombre,Contractura trapecial cervical,Dolor muscular rigido por mala postura laboral continuada,4,122/78,68,15,36.5,99,Pendiente,Por asignar
+Samantha Maria Carvajal Yepes,1024501179,27,Mujer,Gastrocolitis leve transitoria,Dolor colico moderado y dos deposiciones semiliquidas,4,108/70,76,16,36.9,99,Pendiente,Por asignar
+Emilio David Hoyos Buitrago,1024501180,40,Hombre,Contusion simple de rodilla derecha,Golpe contra parachoques sin derrame articular ni bloqueo,4,124/80,70,15,36.6,99,Pendiente,Por asignar
+Renata Cristina Duque Agudelo,1024501181,52,Mujer,Epicondilitis lateral codo derecho,Dolor al estrechar la mano y al levantar objetos en extension,4,126/78,68,15,36.5,98,Pendiente,Por asignar
+Alvaro Felipe Serna Cano,1024501182,47,Hombre,Blefaritis anterior eccematosa,Costras en borde palpebral picor y sensacion de quemazon ocular,4,118/74,72,16,36.6,99,Pendiente,Por asignar
+Julieta Maria Maya Velez,1024501183,31,Mujer,Faringitis catarral viral,Ardor de garganta rinorrea hialina y febricula de 37.4 grados,4,110/68,76,16,37.4,99,Pendiente,Por asignar
+Alfonso Javier Toro Ospina,1024501184,64,Hombre,Artrosis de rodilla reagudizada,Dolor articular mecanico tras caminata prolongada en paciente senil,4,134/82,70,15,36.5,98,Pendiente,Por asignar
+Clara Ines Giraldo Betancur,1024501185,43,Mujer,Herida cortante no complicada en antebrazo,Corte superficial de 3 cm con cuchillo de cocina que no sangra,4,116/72,74,16,36.6,99,Pendiente,Por asignar
+Gonzalo Eduardo Cardona Zuluaga,1024501186,50,Hombre,Quemadura de primer grado por vapor,Eritema doloroso en dorso de mano sin flictenas,4,122/76,72,16,36.8,99,Pendiente,Por asignar
+Irene Carolina Quintero Mejia,1024501187,38,Mujer,Cervicobraquialgia mecanica,Dolor cervical con irradiacion a hombro sin perdida de fuerza,4,120/75,70,15,36.5,98,Pendiente,Por asignar
+Ernesto Leon Echeverri Palacio,1024501188,58,Hombre,Tenosinovitis de flexores de la mano,Dolor y crepitacion leve en trayecto tendinoso palmar,4,128/80,68,15,36.6,99,Pendiente,Por asignar
+Alicia Sofia Botero Osorio,1024501189,23,Mujer,Esguince de tobillo grado I,Torcedura leve caminando en acera con molestia funcional minima,4,114/70,72,16,36.5,99,Pendiente,Por asignar
+Hugo Alberto Arango Ceballos,1024501190,60,Hombre,Molestias digestivas postprandiales,Acidez retroesternal y eructos frecuentes tras almuerzo copioso,4,130/84,72,16,36.6,98,Pendiente,Por asignar
+Silvia Maria Piedrahita Villegas,1024501191,49,Mujer,Laringitis con disfonia,Perdida de voz tras esfuerzo vocal sin estridor ni dolor,4,118/74,70,15,36.7,99,Pendiente,Por asignar
+Arturo Jose Saldarriaga Tabares,1024501192,36,Hombre,Dedo en resorte anular izquierdo,Chasquido palpable y bloqueo intermitente al extender el dedo,4,122/76,68,15,36.5,99,Pendiente,Por asignar
+Elisa Fernanda Urrego Bedoya,1024501193,28,Mujer,Quemadura quimica leve por tinte capilar,Irritacion y descamacion en cuero cabelludo sin ampollas,4,112/68,74,16,36.6,99,Pendiente,Por asignar
+Jaime Andres Tamayo Marulanda,1024501194,55,Hombre,Gonalgia post esfuerzo no traumatica,Dolor difuso en ambas rodillas tras subir escaleras de estadio,4,126/80,70,15,36.5,98,Pendiente,Por asignar
+Esther Lucia Carvajal Yepes,1024501195,67,Mujer,Neuropatia periferica diabetica dolorosa,Disestesias nocturnas en ambos pies con sensacion de ardor,4,132/82,68,14,36.5,98,Pendiente,Por asignar
+Ramiro Esteban Hoyos Buitrago,1024501196,42,Hombre,Escoriacion multiple por caida en patineta,Raspaduras dermicas superficiales en codo y rodilla izquierdos,4,120/78,72,16,36.6,99,Pendiente,Por asignar
+Teresa Cristina Duque Agudelo,1024501197,34,Mujer,Congestion nasal severa por rinitis,Obstruccion nasal total con cefalea frontal opresiva leve,4,114/72,74,16,36.7,99,Pendiente,Por asignar
+Cesar Mauricio Serna Cano,1024501198,51,Hombre,Lumbago agudo post carga de maleta,Espasmo paravertebral lumbar que cede al reposo en decubito,4,128/82,70,15,36.6,98,Pendiente,Por asignar
+Raquel Sofia Maya Velez,1024501199,26,Mujer,Otalgia por tapon de cerumen impactado,Disminucion brusca de audicion tras ducha con leve molestia,4,110/66,70,15,36.5,99,Pendiente,Por asignar
+Armando David Toro Ospina,1024501200,39,Hombre,Parestesias transitorias en mano,Entumecimiento de dedos primero a tercero al despertar,4,122/76,68,15,36.5,99,Pendiente,Por asignar
+Rocio Elena Giraldo Betancur,1024501201,44,Mujer,Sindrome de ojo seco reagudizado,Sensacion de cuerpo extrano y ardor en ambos ojos,4,116/72,70,16,36.6,99,Pendiente,Por asignar
+Julio Roberto Cardona Zuluaga,1024501202,62,Hombre,Onicocriptosis con granuloma incipiente,Uña encarnada en primer dedo del pie derecho con leve supuracion,4,128/80,72,15,36.7,98,Pendiente,Por asignar
+Lorena Ines Quintero Mejia,1024501203,30,Mujer,Pitiriasis rosada de Gibert,Placa heraldo en tronco con lesiones secundarias en arbol de navidad,4,112/70,72,16,36.6,99,Pendiente,Por asignar
+Ignacio Camilo Echeverri Palacio,1024501204,45,Hombre,Solicitud de certificado de buena salud,Examen fisico de rutina para inscripcion deportiva no urgente,5,118/76,66,15,36.5,99,Pendiente,Por asignar
+Pilar Beatriz Botero Osorio,1024501205,56,Mujer,Consulta por lentitud en digestiones,Malestar leve tras ingesta abundante sin signos de alarma,5,122/78,68,15,36.5,98,Pendiente,Por asignar
+Enrique Gabriel Arango Ceballos,1024501206,65,Hombre,Verificacion de agudeza visual,Paciente nota vision borrosa progresiva para lectura cercana,5,126/80,64,14,36.6,98,Pendiente,Por asignar
+Carmen Alicia Piedrahita Villegas,1024501207,71,Mujer,Control periodico de osteopenia,Solicitud de orden medica para examen de densitometria osea,5,128/82,65,14,36.5,98,Pendiente,Por asignar
+Pablo Andres Saldarriaga Tabares,1024501208,28,Hombre,Retiro de puntos de sutura,Sutura en palma de mano realizada hace 10 dias con bordes cicatrizados,5,116/72,68,15,36.5,99,Pendiente,Por asignar
+Mercedes Elena Urrego Bedoya,1024501209,60,Mujer,Molestias por calzado inadecuado,Dolor en antepie tras jornada con calzado estrecho sin lesion cutanea,5,124/78,66,15,36.5,98,Pendiente,Por asignar
+Lucas Martin Tamayo Marulanda,1024501210,33,Hombre,Picazon cutanea leve tras bano,Prurito subito pasajero en piernas sin placas ni eritema visible,5,118/74,68,15,36.6,99,Pendiente,Por asignar
+Leonor Maria Carvajal Yepes,1024501211,54,Mujer,Dudas sobre posologia de pastillas,Paciente consulta como tomar su medicacion habitual de tiroides,5,120/76,65,14,36.5,98,Pendiente,Por asignar
+Bruno Nicolas Hoyos Buitrago,1024501212,37,Hombre,Solicitud de examen de colesterol,Desea chequeo preventivo anual por antecedentes familiares,5,122/78,66,15,36.5,99,Pendiente,Por asignar
+Ines Eugenia Duque Agudelo,1024501213,48,Mujer,Mancha senil en dorso de mano,Consulta por aparicion de mancha marron benigna de meses de evolucion,5,118/75,68,15,36.6,98,Pendiente,Por asignar
+German Dario Serna Cano,1024501214,68,Hombre,Sensacion de pesadez en piernas,Pesadez vespertina en pantorrillas sin edema evidente ni dolor agudo,5,130/80,64,14,36.5,98,Pendiente,Por asignar
+Miriam Raquel Maya Velez,1024501215,41,Mujer,Revision de dolor lumbar resuelto,Paciente asintomatica que desea alta definitiva de reposo medico,5,115/70,68,15,36.5,99,Pendiente,Por asignar
