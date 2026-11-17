@@ -3,6 +3,7 @@ workflows:
     name: Compilar IPA iOS Triaje
     max_build_duration: 30
     instance_type: mac_mini_m1
+    working_directory: appAndroid
     environment:
       flutter: stable
       xcode: latest
@@ -14,4 +15,5 @@ workflows:
         script: |
           flutter build ipa --debug --no-codesign
     artifacts:
+      - appAndroid/build/ios/ipa/*.ipa
       - build/ios/ipa/*.ipa
