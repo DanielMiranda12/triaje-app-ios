@@ -11,9 +11,11 @@ workflows:
       - name: Instalar dependencias
         script: |
           flutter pub get
-      - name: Construir IPA para iOS
+      - name: Construir app para iOS (Sin firma estricta)
         script: |
-          flutter build ipa --debug --export-options-plist=ios/ExportOptions.plist
+          flutter build ios --debug --no-codesign
     artifacts:
+      - appAndroid/build/ios/iphoneos/*.app
+      - build/ios/iphoneos/*.app
       - appAndroid/build/ios/ipa/*.ipa
       - build/ios/ipa/*.ipa
