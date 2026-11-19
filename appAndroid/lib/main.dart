@@ -511,80 +511,117 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
   Widget _buildAccessChoice() {
     return SafeArea(
       child: Center(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 440),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Center(
-                  child: Container(
-                    width: 56,
-                    height: 56,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: _primary,
-                      borderRadius: BorderRadius.circular(16),
-                      boxShadow: [
-                        BoxShadow(
-                          color: _primary.withValues(alpha: 0.24),
-                          blurRadius: 14,
-                          offset: const Offset(0, 5),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final isTabletWide = constraints.maxWidth > 580;
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: isTabletWide ? 740 : 440),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Center(
+                      child: Container(
+                        width: 56,
+                        height: 56,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: _primary,
+                          borderRadius: BorderRadius.circular(16),
+                          boxShadow: [
+                            BoxShadow(
+                              color: _primary.withValues(alpha: 0.24),
+                              blurRadius: 14,
+                              offset: const Offset(0, 5),
+                            ),
+                          ],
                         ),
-                      ],
+                        child: const Text('t+',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 28,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: -1)),
+                      ),
                     ),
-                    child: const Text('t+',
+                    const SizedBox(height: 18),
+                    const Text('Bienvenido a trIAje',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 28,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: -1)),
-                  ),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w900,
+                            color: _ink)),
+                    const SizedBox(height: 6),
+                    const Text('Elige cómo quieres ingresar desde esta aplicación.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 13, height: 1.4, color: _muted)),
+                    const SizedBox(height: 22),
+                    if (isTabletWide)
+                      IntrinsicHeight(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              child: _AccessCard(
+                                icon: Icons.confirmation_number_outlined,
+                                title: 'Consulta de paciente',
+                                description:
+                                    'Consulta el nivel, el estado de atención y tu turno con el documento registrado.',
+                                buttonText: 'Consultar mi turno',
+                                onPressed: () => _goToMode(_AppMode.patient),
+                              ),
+                            ),
+                            const SizedBox(width: 14),
+                            Expanded(
+                              child: _AccessCard(
+                                icon: Icons.medical_services_outlined,
+                                title: 'Acceso del médico',
+                                description:
+                                    'Revisa la cola, consulta los registros y marca las atenciones completadas.',
+                                buttonText: 'Ingresar como médico',
+                                onPressed: () => _goToMode(_AppMode.doctor),
+                                primary: true,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    else ...[
+                      _AccessCard(
+                        icon: Icons.confirmation_number_outlined,
+                        title: 'Consulta de paciente',
+                        description:
+                            'Consulta el nivel, el estado de atención y tu turno con el documento registrado.',
+                        buttonText: 'Consultar mi turno',
+                        onPressed: () => _goToMode(_AppMode.patient),
+                      ),
+                      const SizedBox(height: 12),
+                      _AccessCard(
+                        icon: Icons.medical_services_outlined,
+                        title: 'Acceso del médico',
+                        description:
+                            'Revisa la cola, consulta los registros y marca las atenciones completadas.',
+                        buttonText: 'Ingresar como médico',
+                        onPressed: () => _goToMode(_AppMode.doctor),
+                        primary: true,
+                      ),
+                    ],
+                    const SizedBox(height: 16),
+                    Text(
+                      'Servidor: ${_serverIp.text}:$_serverPort · Configúralo con el icono de conexión.',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 11, color: _muted),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text('Prototipo académico: utiliza solo datos ficticios.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 10, color: _muted)),
+                  ],
                 ),
-                const SizedBox(height: 18),
-                const Text('Bienvenido a trIAje',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.w900,
-                        color: _ink)),
-                const SizedBox(height: 6),
-                const Text('Elige cómo quieres ingresar desde esta aplicación.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 13, height: 1.4, color: _muted)),
-                const SizedBox(height: 22),
-                _AccessCard(
-                  icon: Icons.confirmation_number_outlined,
-                  title: 'Consulta de paciente',
-                  description:
-                      'Consulta el nivel, el estado de atención y tu turno con el documento registrado.',
-                  buttonText: 'Consultar mi turno',
-                  onPressed: () => _goToMode(_AppMode.patient),
-                ),
-                const SizedBox(height: 12),
-                _AccessCard(
-                  icon: Icons.medical_services_outlined,
-                  title: 'Acceso del médico',
-                  description:
-                      'Revisa la cola, consulta los registros y marca las atenciones completadas.',
-                  buttonText: 'Ingresar como médico',
-                  onPressed: () => _goToMode(_AppMode.doctor),
-                  primary: true,
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  'Servidor: ${_serverIp.text}:$_serverPort · Configúralo con el icono de conexión.',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 11, color: _muted),
-                ),
-                const SizedBox(height: 8),
-                const Text('Prototipo académico: utiliza solo datos ficticios.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 10, color: _muted)),
-              ],
-            ),
-          ),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -596,7 +633,8 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 440),
+            constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width > 620 ? 620.0 : 440.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -713,7 +751,8 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 440),
+            constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width > 620 ? 540.0 : 440.0),
             child: Card(
               color: Colors.white,
               elevation: 0,
