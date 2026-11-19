@@ -301,7 +301,9 @@ app.post('/api/patients/quick-consult', async (req, res, next) => {
       priority: patient.priority,
       careStatus: patient.careStatus,
       queuePosition,
-      totalWaiting
+      totalWaiting,
+      doctor: patient.doctor,
+      attendedBy: patient.attendedBy ?? null
     });
   } catch (error) { next(error); }
 });

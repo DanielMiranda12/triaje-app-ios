@@ -1360,6 +1360,14 @@ class _PatientTurnCard extends StatelessWidget {
         ? List.filled(document.length, '•').join()
         : '${List.filled(document.length - 4, '•').join()}${document.substring(document.length - 4)}';
 
+    final doctorAssigned = patient['doctor']?.toString().trim() ?? '';
+    final doctorAttended = patient['attendedBy'] is Map
+        ? (patient['attendedBy'] as Map)['name']?.toString() ?? ''
+        : '';
+    final doctorLabel = (patient['careStatus'] == 'Atendido')
+        ? (doctorAttended.isNotEmpty ? doctorAttended : doctorAssigned)
+        : (doctorAssigned.isNotEmpty ? doctorAssigned : 'Por asignar');
+
     return AnimatedContainer(
       duration: const Duration(milliseconds: 420),
       curve: Curves.easeOutCubic,
@@ -1465,6 +1473,13 @@ class _PatientTurnCard extends StatelessWidget {
           const Icon(Icons.badge_outlined, size: 14, color: Color(0xFF98A2B3)),
           const SizedBox(width: 5),
           Text('Documento: $maskedDocument',
+              style: const TextStyle(fontSize: 11, color: Color(0xFF667085))),
+        ]),
+        const SizedBox(height: 10),
+        Row(children: [
+          const Icon(Icons.medical_services_outlined, size: 14, color: Color(0xFF98A2B3)),
+          const SizedBox(width: 5),
+          Text('Médico: $doctorLabel',
               style: const TextStyle(fontSize: 11, color: Color(0xFF667085))),
         ]),
         const SizedBox(height: 15),
