@@ -16,7 +16,7 @@ class TriajeDoctorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'trIAje · Médico',
+      title: 'trIAje Móvil',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: _primary),
@@ -170,8 +170,8 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
     });
   }
 
-  Future<void> _consultPatientTurn() async {
-    final document = _lookupDocument.text.trim();
+  Future<void> _consultPatientTurn({bool keepCurrent = false, String? documentOverride}) async {
+    final document = (documentOverride ?? _lookupDocument.text).trim();
     if (document.isEmpty) {
       setState(() => _lookupError = 'Escribe el documento del paciente.');
       return;
@@ -180,7 +180,9 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
     setState(() {
       _lookingUpPatient = true;
       _lookupError = null;
-      _publicPatient = null;
+      if (!keepCurrent) {
+        _publicPatient = null;
+      }
     });
     try {
       final response = await http
@@ -199,12 +201,35 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
         _publicPatient = patient;
         _lookingUpPatient = false;
       });
+      if (keepCurrent) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              patient['careStatus'] == 'Pendiente'
+                  ? 'Turno actualizado: Cupo #${patient['queuePosition'] ?? '—'}'
+                  : 'Turno actualizado: Atención completada',
+            ),
+            duration: const Duration(seconds: 2),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
     } catch (error) {
       if (!mounted) return;
       setState(() {
         _lookingUpPatient = false;
         _lookupError = _friendlyError(error);
       });
+      if (keepCurrent) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(_friendlyError(error)),
+            backgroundColor: const Color(0xFFB42318),
+            duration: const Duration(seconds: 3),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
     }
   }
 
@@ -493,17 +518,42 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const _BrandMark(),
-                const SizedBox(height: 16),
+                Center(
+                  child: Container(
+                    width: 56,
+                    height: 56,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: _primary,
+                      borderRadius: BorderRadius.circular(16),
+                      boxShadow: [
+                        BoxShadow(
+                          color: _primary.withValues(alpha: 0.24),
+                          blurRadius: 14,
+                          offset: const Offset(0, 5),
+                        ),
+                      ],
+                    ),
+                    child: const Text('t+',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: -1)),
+                  ),
+                ),
+                const SizedBox(height: 18),
                 const Text('Bienvenido a trIAje',
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 24,
                         fontWeight: FontWeight.w900,
                         color: _ink)),
                 const SizedBox(height: 6),
                 const Text('Elige cómo quieres ingresar desde esta aplicación.',
+                    textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 13, height: 1.4, color: _muted)),
-                const SizedBox(height: 20),
+                const SizedBox(height: 22),
                 _AccessCard(
                   icon: Icons.confirmation_number_outlined,
                   title: 'Consulta de paciente',
@@ -635,10 +685,12 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
                           key: ValueKey('empty-patient-result'))
                       : _PatientTurnCard(
                           key: ValueKey(
-                            '${_lookupDocument.text.trim()}-${_publicPatient!['careStatus']}',
+                            '${_lookupDocument.text.trim()}-${_publicPatient!['careStatus']}-${_publicPatient!['queuePosition']}',
                           ),
                           patient: _publicPatient!,
                           searchedDocument: _lookupDocument.text,
+                          onRefresh: () => _consultPatientTurn(keepCurrent: true),
+                          isRefreshing: _lookingUpPatient,
                         ),
                 ),
                 const SizedBox(height: 12),
@@ -1151,17 +1203,19 @@ class _BrandMark extends StatelessWidget {
   const _BrandMark();
 
   @override
-  Widget build(BuildContext context) => Container(
-        width: 34,
-        height: 34,
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-            color: _primary, borderRadius: BorderRadius.circular(10)),
-        child: const Text('t',
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w800)),
+  Widget build(BuildContext context) => Center(
+        child: Container(
+          width: 34,
+          height: 34,
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+              color: _primary, borderRadius: BorderRadius.circular(10)),
+          child: const Text('t',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800)),
+        ),
       );
 }
 
@@ -1228,10 +1282,14 @@ class _PatientTurnCard extends StatelessWidget {
     super.key,
     required this.patient,
     required this.searchedDocument,
+    this.onRefresh,
+    this.isRefreshing = false,
   });
 
   final Map<String, dynamic> patient;
   final String searchedDocument;
+  final VoidCallback? onRefresh;
+  final bool isRefreshing;
 
   @override
   Widget build(BuildContext context) {
@@ -1335,6 +1393,22 @@ class _PatientTurnCard extends StatelessWidget {
                     fontWeight: FontWeight.w900,
                     color: priorityColor)),
           ),
+          if (onRefresh != null) ...[
+            const SizedBox(width: 4),
+            IconButton(
+              tooltip: 'Actualizar turno',
+              onPressed: isRefreshing ? null : onRefresh,
+              icon: isRefreshing
+                  ? const SizedBox(
+                      width: 14,
+                      height: 14,
+                      child: CircularProgressIndicator(
+                          strokeWidth: 2, color: _primary),
+                    )
+                  : const Icon(Icons.refresh_rounded, size: 20, color: _muted),
+              visualDensity: VisualDensity.compact,
+            ),
+          ],
         ]),
         const SizedBox(height: 17),
         Text(patient['name']?.toString() ?? 'Paciente',
@@ -1429,6 +1503,34 @@ class _PatientTurnCard extends StatelessWidget {
             ),
           ]),
         ),
+        if (onRefresh != null) ...[
+          const SizedBox(height: 14),
+          OutlinedButton.icon(
+            onPressed: isRefreshing ? null : onRefresh,
+            style: OutlinedButton.styleFrom(
+              foregroundColor: _primary,
+              side: const BorderSide(color: Color(0xFFC7D2FE), width: 1.2),
+              backgroundColor: const Color(0xFFF8FAFC),
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+            ),
+            icon: isRefreshing
+                ? const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(
+                        strokeWidth: 2, color: _primary),
+                  )
+                : const Icon(Icons.refresh_rounded, size: 20),
+            label: Text(
+              isRefreshing
+                  ? 'Actualizando estado...'
+                  : 'Actualizar estado del turno',
+              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 13),
+            ),
+          ),
+        ],
       ]),
     );
   }
