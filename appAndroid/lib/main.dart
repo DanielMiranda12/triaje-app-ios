@@ -880,13 +880,16 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
         _patients.where((p) => p['careStatus'] == 'Pendiente').length;
 
     return SafeArea(
-      child: RefreshIndicator(
-        onRefresh: _loadPatients,
-        child: ListView(
-          physics: const AlwaysScrollableScrollPhysics(),
-          padding: const EdgeInsets.fromLTRB(16, 18, 16, 30),
-          children: [
-            Row(
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 880),
+          child: RefreshIndicator(
+            onRefresh: _loadPatients,
+            child: ListView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              padding: const EdgeInsets.fromLTRB(20, 18, 20, 32),
+              children: [
+                Row(
               children: [
                 Expanded(
                   child: Column(
@@ -990,7 +993,9 @@ class _DoctorHomeScreenState extends State<DoctorHomeScreen> {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 10, color: _muted),
             ),
-          ],
+              ],
+            ),
+          ),
         ),
       ),
     );
