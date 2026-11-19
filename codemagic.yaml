@@ -1,19 +1,26 @@
 workflows:
   ios-workflow:
-    name: Compilar IPA iOS Triaje
+    name: Compilar IPA iOS Triaje (sin firma, para Sideloadly/AltStore)
     max_build_duration: 30
-    instance_type: mac_mini_m1
+    instance_type: mac_mini_m2
     working_directory: appAndroid
     environment:
       flutter: stable
       xcode: latest
+      cocoapods: default
     scripts:
       - name: Instalar dependencias
         script: |
           flutter pub get
-      - name: Construir IPA para iOS
+      - name: Compilar app iOS sin firma
         script: |
-          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
+          flutter build ios --release --no-codesign
+      - name: Empaquetar IPA sin firma
+        script: |
+          rm -rf build/ios/ipa && mkdir -p build/ios/ipa/Payload
+          cp -R build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
+          cd build/ios/ipa && zip -qry Triaje-unsigned.ipa Payload && rm -rf Payload
+          ls -la
     artifacts:
-      - appAndroid/build/ios/ipa/*.ipa
       - build/ios/ipa/*.ipa
+      - appAndroid/build/ios/ipa/*.ipa

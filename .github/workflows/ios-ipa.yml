@@ -1,0 +1,42 @@
+name: Compilar IPA iOS (sin firma)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'appAndroid/**'
+      - '.github/workflows/ios-ipa.yml'
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: appAndroid
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Instalar dependencias
+        run: flutter pub get
+
+      - name: Compilar app iOS sin firma
+        run: flutter build ios --release --no-codesign
+
+      - name: Empaquetar IPA
+        run: |
+          mkdir -p build/ios/ipa/Payload
+          cp -R build/ios/iphoneos/Runner.app build/ios/ipa/Payload/
+          cd build/ios/ipa && zip -qry Triaje-unsigned.ipa Payload && rm -rf Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Triaje-ios-ipa
+          path: appAndroid/build/ios/ipa/Triaje-unsigned.ipa
+          retention-days: 14
